@@ -413,6 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 100
   HP: 100
+  campHPbar: {fileID: 0}
 --- !u!1 &348267122
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +426,7 @@ GameObject:
   - component: {fileID: 348267125}
   - component: {fileID: 348267124}
   m_Layer: 5
-  m_Name: CampHPBar
+  m_Name: HPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,6 +465,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94af5a58141e20b47b3b6f18eb36330d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 348267125}
+  Camera: {fileID: 1198725023}
+  Target: {fileID: 182327944}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &348267125
 MonoBehaviour:
   m_ObjectHideFlags: 0
