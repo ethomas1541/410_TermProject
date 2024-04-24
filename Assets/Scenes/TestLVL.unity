@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd632d4c3692fe640925a1c3d948b47b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 41992769}
+  PlayerObject: {fileID: 41992769}
   rotationSpeed: -360
   rotateDuration: 0.5
 --- !u!114 &442560637
