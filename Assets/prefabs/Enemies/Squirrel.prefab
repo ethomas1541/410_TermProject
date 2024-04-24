@@ -242,5 +242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7496853027927253044}
   hopSpeed: 0.05
-  hopIntervalFrames: 60
+  hopIntervalFrames: 20
   animalOffsetY: -0.6
+  hopHeight: 10
