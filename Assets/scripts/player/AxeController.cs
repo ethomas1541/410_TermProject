@@ -31,7 +31,7 @@ public class AxeController : MonoBehaviour
             yield return null;
         }
     
-        transform.Rotate(0.0f, 0.0f, 180.0f, Space.Self);
+        transform.Rotate(0.0f, 270.0f, 180.0f, Space.Self);
         
         elapsedTime = 0f;
         while (elapsedTime < rotateDuration)
