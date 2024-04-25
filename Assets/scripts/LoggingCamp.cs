@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class LoggingCamp : MonoBehaviour
 {   
+    // depreciated, generic HP bar system being added
     public float MaxHP = 100;
     
     // hitpoints

@@ -17,7 +17,8 @@ public class EnemyAIAnimated : MonoBehaviour
     int primaryTargetLayerMask, secondaryTargetLayerMask;
     bool is_dead, is_killed;
 
-    private void Awake() {
+    private void Awake()
+    {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         agent.stoppingDistance = attackRange;
@@ -27,78 +28,94 @@ public class EnemyAIAnimated : MonoBehaviour
         secondaryTargetLayerMask = 1 << secondaryTarget.layer;
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
 
         if (Input.GetKey(KeyCode.K)) { is_dead = true; }
 
-        if (is_dead && (!is_killed)) {
+        if (is_dead && (!is_killed))
+        {
             is_killed = true;
-            KillEnemy();
+            Die();
         }
-        else if (!is_dead) {
+        else if (!is_dead)
+        {
             isPrimaryInAttackRange = Physics.CheckSphere(transform.position, attackRange, primaryTargetLayerMask);
             isSecondaryInAttackRange = Physics.CheckSphere(transform.position, attackRange, secondaryTargetLayerMask);
 
             // The primary and secondary target can be attacked
-            if (isPrimaryInAttackRange && isSecondaryInAttackRange) {
+            if (isPrimaryInAttackRange && isSecondaryInAttackRange)
+            {
                 float distPrimary = Vector3.SqrMagnitude(transform.position - primaryTarget.transform.position);
                 float distSecondary = Vector3.SqrMagnitude(transform.position - secondaryTarget.transform.position);
 
                 // Attack the nearest target
-                if (distPrimary > distSecondary) {
+                if (distPrimary > distSecondary)
+                {
                     AttackTarget(primaryTarget);
-                } else {
+                }
+                else
+                {
                     AttackTarget(secondaryTarget);
                 }
             }
 
             // The primary target can be attacked
-            else if (isPrimaryInAttackRange) {
+            else if (isPrimaryInAttackRange)
+            {
                 AttackTarget(primaryTarget);
             }
 
             // The secondary target can be attacked
-            else if (isSecondaryInAttackRange){
+            else if (isSecondaryInAttackRange)
+            {
                 AttackTarget(secondaryTarget);
             }
 
             // No targets are in range, approach the primary target
-            else {
+            else
+            {
                 ApproachTarget();
             }
         }
     }
 
-    private void OnDrawGizmosSelected() {
+    private void OnDrawGizmosSelected()
+    {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
-    private void PointTowards(GameObject target) {
+    private void PointTowards(GameObject target)
+    {
         Vector3 direction = target.transform.position - transform.position;
         direction.y = 0;
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = angleCorrection * rotation;
     }
 
-    private void KillEnemy() {
+    public void Die()
+    {
         animator.SetBool("Approach", false);
         animator.SetBool("Attack", false);
         animator.SetTrigger("Dead");
         // this.gameObject.SetActive(false);
     }
 
-    private void ApproachTarget() {
+    private void ApproachTarget()
+    {
         PointTowards(primaryTarget);
         agent.SetDestination(primaryTarget.transform.position);
         animator.SetBool("Attack", false);
         animator.SetBool("Approach", true);
     }
 
-    private void AttackTarget(GameObject target) {
+    private void AttackTarget(GameObject target)
+    {
         // Add attack code
         PointTowards(primaryTarget);
         animator.SetBool("Approach", false);
         animator.SetBool("Attack", true);
     }
+
 }
