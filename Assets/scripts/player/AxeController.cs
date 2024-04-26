@@ -31,7 +31,7 @@ public class AxeController : MonoBehaviour
             yield return null;
         }
     
-        transform.Rotate(0.0f, 270.0f, 180.0f, Space.Self);
+        transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
         
         elapsedTime = 0f;
         while (elapsedTime < rotateDuration)
@@ -42,7 +42,7 @@ public class AxeController : MonoBehaviour
             yield return null;
         } 
 
-         transform.rotation = Quaternion.Euler(0.0f, 90.0f, 180.0f);
+        transform.rotation = Quaternion.Euler(0.0f, 90.0f, -180.0f);
         isactive = false;
     }
 }
