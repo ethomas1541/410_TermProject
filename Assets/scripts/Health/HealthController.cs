@@ -14,13 +14,13 @@ public class HealthController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    public EnemyController EnemyAgent;
+    public EnemyAIAnimated EnemyAgent;
 
     void Start()
     {
         HealthBar.UpdateHPBar(HP, MaxHP);
         // Get a reference to the secondary controller script
-        // EnemyAgent = GetComponent<EnemyAIAnimated>();
+        EnemyAgent = GetComponent<EnemyAIAnimated>();
     }
 
     public void TakeDamage(float DmgAmount)
