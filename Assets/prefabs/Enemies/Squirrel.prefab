@@ -111,11 +111,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5310173418061048788}
-  - component: {fileID: 5611021080396738492}
   - component: {fileID: 8144208609732891115}
   - component: {fileID: 1756479938306388685}
   - component: {fileID: 6397884198863719155}
   - component: {fileID: 1227467840413287369}
+  - component: {fileID: 5861254438367468995}
   m_Layer: 0
   m_Name: Squirrel
   m_TagString: Enemy
@@ -140,27 +140,6 @@ Transform:
   - {fileID: 5619881444453053811}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5611021080396738492
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234378417400634984}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.3229408, y: 1.838841, z: 0.73729}
-  m_Center: {x: -0.46643442, y: 0.9259095, z: 0}
 --- !u!195 &8144208609732891115
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -179,8 +158,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.5
-  m_BaseOffset: 0
+  m_Height: 1.2
+  m_BaseOffset: -0.31
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1756479938306388685
@@ -242,6 +221,27 @@ MonoBehaviour:
   HP: 100
   HealthBar: {fileID: 3854942701166199261}
   EnemyAgent: {fileID: 1756479938306388685}
+--- !u!65 &5861254438367468995
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234378417400634984}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.76, y: 1.17, z: 2.33}
+  m_Center: {x: 0, y: 0.91, z: 0}
 --- !u!1 &1879828364716657457
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +402,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5306382699777859205}
   - component: {fileID: 6017977278667239073}
-  - component: {fileID: 2373224303436541376}
   - component: {fileID: 7524854551098010834}
   - component: {fileID: 5984816868095370807}
   m_Layer: 0
@@ -435,27 +434,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5736836853416366443}
   m_Mesh: {fileID: -2432090755550338912, guid: ff2394d3dc2a18542b17b4b4c2da2ca9, type: 3}
---- !u!65 &2373224303436541376
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5736836853416366443}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.3229408, y: 1.838841, z: 0.73729}
-  m_Center: {x: -0.46643442, y: 0.9259095, z: 0}
 --- !u!23 &7524854551098010834
 MeshRenderer:
   m_ObjectHideFlags: 0
