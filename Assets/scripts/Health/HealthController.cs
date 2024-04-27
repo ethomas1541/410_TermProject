@@ -14,13 +14,13 @@ public class HealthController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    public EnemyAIAnimated EnemyAgent;
+    public EnemyController EnemyAgent;
 
     void Start()
     {
         HealthBar.UpdateHPBar(HP, MaxHP);
-        // this is so we can get the death animation/function
-        EnemyAgent = GetComponent<EnemyAIAnimated>();
+        // Get a reference to the secondary controller script
+        EnemyAgent = GetComponent<EnemyController>();
     }
 
     public void TakeDamage(float DmgAmount)
