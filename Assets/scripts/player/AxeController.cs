@@ -26,23 +26,23 @@ public class AxeController : MonoBehaviour
         while (elapsedTime < rotateDuration)
         {
             // Rotate around the target object
-            transform.RotateAround(PlayerObject.position, Vector3.up, rotationSpeed * Time.deltaTime);
+            transform.RotateAround(PlayerObject.position, Vector3.up, -rotationSpeed * Time.deltaTime);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
     
-        transform.Rotate(0.0f, 270.0f, 180.0f, Space.Self);
+        //transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
         
         elapsedTime = 0f;
         while (elapsedTime < rotateDuration)
         {
             // Rotate around the target object
-            transform.RotateAround(PlayerObject.position, Vector3.up, -rotationSpeed * Time.deltaTime);
+            transform.RotateAround(PlayerObject.position, Vector3.up, rotationSpeed * Time.deltaTime);
             elapsedTime += Time.deltaTime;
             yield return null;
         } 
 
-         transform.rotation = Quaternion.Euler(0.0f, 90.0f, 180.0f);
+        // transform.rotation = Quaternion.Euler(0.0f, 90.0f, -180.0f);
         isactive = false;
     }
 }

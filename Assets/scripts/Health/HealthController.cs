@@ -19,7 +19,7 @@ public class HealthController : MonoBehaviour
     void Start()
     {
         HealthBar.UpdateHPBar(HP, MaxHP);
-        // Get a reference to the secondary controller script
+        // this is so we can get the death animation/function
         EnemyAgent = GetComponent<EnemyAIAnimated>();
     }
 
