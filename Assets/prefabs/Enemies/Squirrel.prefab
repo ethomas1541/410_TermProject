@@ -681,8 +681,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
-  HP: 100
+  MaxHP: 50
+  HP: 50
   HealthBar: {fileID: 8292106105288736150}
   EnemyAgent: {fileID: 3036851119060545210}
 --- !u!65 &1194706109247690853

@@ -7,7 +7,7 @@ public class AxeController : MonoBehaviour
 {
     public Transform PlayerObject; // The object around which you want to rotate
     public float rotationSpeed = 10f; // Speed of rotation
-    public float rotateDuration = 1f; // Duration for rotation
+    public float rotateDuration = .8f; // Duration for rotation
     private bool isactive = false;
     
 
