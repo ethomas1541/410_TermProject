@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerWeaponDMGBox
   - Enemy
+  - Base
   layers:
   - Default
   - TransparentFX
