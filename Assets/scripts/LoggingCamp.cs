@@ -1,30 +1,29 @@
 // hp bar: https://www.youtube.com/watch?v=_lREXfAMUcE&t=4s&ab_channel=BMo
-//  
+//
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LoggingCamp : MonoBehaviour
-{   
+{
     // depreciated, generic HP bar system being added
     public float MaxHP = 100;
-    
+
     // hitpoints
     public float HP = 100;
 
-    [SerializeField] HPBar campHPbar;
+    [SerializeField] HPBarHUD campHPbar;
 
     // Start is called before the first frame update
     void Start()
     {
-        campHPbar = GetComponentInChildren<HPBar>();
         campHPbar.UpdateHPBar(HP, MaxHP);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void TakeDamage(float DmgAmount)
@@ -49,6 +48,6 @@ public class LoggingCamp : MonoBehaviour
 
     public void RepairCamp()
     {
-        // todo: logic for repairing camp 
+        // todo: logic for repairing camp
     }
 }

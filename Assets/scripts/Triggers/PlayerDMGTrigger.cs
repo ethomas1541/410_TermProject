@@ -8,7 +8,11 @@ public class PlayerDMGTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerHealthController playerHP = other.GetComponent<PlayerHealthController>();
-            playerHP.TakeDamage(5);
+            playerHP.TakeDamage(2.5f);
+        }
+        else if (other.CompareTag("Base")) {
+            LoggingCamp lc = other.GetComponent<LoggingCamp>();
+            lc.TakeDamage(2.5f);
         }
     }
 }
