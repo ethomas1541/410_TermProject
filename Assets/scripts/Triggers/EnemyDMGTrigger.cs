@@ -8,7 +8,7 @@ public class EnemyDMGTrigger : MonoBehaviour
    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
-        {          
+        {
             HealthController EnemyHP = other.GetComponent<HealthController>();
             EnemyHP.TakeDamage(20);
         }
