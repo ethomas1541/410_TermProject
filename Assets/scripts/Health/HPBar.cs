@@ -15,6 +15,10 @@ public class HPBar : MonoBehaviour
     // represents the offset of the bar to make it look right above the entity
     [SerializeField] private Vector3 offset;
 
+    public void Initialize(Camera c)
+    {
+        Camera = c;
+    }
     public void UpdateHPBar(float CurrentHP, float MaxHP)
     {
         slider.value = CurrentHP/MaxHP;

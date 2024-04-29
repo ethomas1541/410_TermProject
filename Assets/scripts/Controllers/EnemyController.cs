@@ -17,6 +17,11 @@ public class EnemyController : MonoBehaviour
     bool alreadyAttacked;
     bool isDead;
 
+    public void Initialize(Transform t)
+    {
+        target = t;
+    }
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
