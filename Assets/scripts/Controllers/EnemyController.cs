@@ -42,6 +42,7 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         float targetDist = Vector3.Distance(transform.position, target.position);
+
         if (isDead) {
             StartCoroutine(Kill());
         }
@@ -59,10 +60,15 @@ public class EnemyController : MonoBehaviour
     }
 
     public IEnumerator Kill() {
-        Debug.Log("I DIED");
         animator.SetBool("Approaching", false);
         animator.SetTrigger("Die");
-        yield return new WaitForSeconds(0.5f);
+
+        // Wait for the current transition to end
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f );
+
+        // Wait for the death animation to end
+        yield return new WaitWhile(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f);
+
         transform.gameObject.SetActive(false);
     }
 
