@@ -66,7 +66,7 @@ public class EnemyController : MonoBehaviour
         transform.gameObject.SetActive(false);
     }
 
-    void LookAt() {
+    void FaceTarget() {
         Vector3 direction = (target.position - transform.position).normalized;
         direction.y = 0.0f;
         Quaternion rotation = Quaternion.LookRotation(direction);
@@ -83,7 +83,7 @@ public class EnemyController : MonoBehaviour
     {
         animator.SetBool("Approaching", false);
 
-        LookAt();
+        FaceTarget();
 
         if (!alreadyAttacked) {
             animator.SetTrigger("Attack");
