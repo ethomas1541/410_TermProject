@@ -1,5 +1,9 @@
+/*
+https://www.youtube.com/watch?v=Vrld13ypX_I&t=0s (part 1)
+https://www.youtube.com/watch?v=q0SBfDFn2Bs&t=607s (part 2)
+*/
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
@@ -19,15 +23,22 @@ public class WaveSpawner : MonoBehaviour
         public float spawn_rate;
     }
 
-    public Wave[] waves;
-
     // for da wave
+    public Wave[] waves;
     private int next_wave = 0;
 
-    public float time_between_waves = 5f;
-    public float wave_countdown;
+    // for enemies
+    public Transform[] spawn_points;
 
-    private SpawnState state = SpawnState.COUNTING;
+    // time variables for da wave
+    public float time_between_waves = 5f;
+    private float wave_countdown;
+
+    // time between checking if enemeis are alive
+    private float search_countdown = 1f;
+
+    // holds current state of wave
+    public SpawnState state = SpawnState.COUNTING;
 
     void Start()
     {
@@ -39,6 +50,21 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
+        if (state == SpawnState.WAITING)
+        {
+            // check if enemies still alive during wave
+            if (!EnemyIsAlive())
+            {
+                // start new wave
+                WaveCompleted();
+            }
+            else
+            {
+                // enemies still alive so stop here
+                return;
+            }
+        }
+
         // start spawning waves
         if (wave_countdown <= 0)
         {
@@ -46,18 +72,62 @@ public class WaveSpawner : MonoBehaviour
             if (state != SpawnState.SPAWNING)
             {
                 // calls the IEnumerator SpawnWave method to start spawning 
-                StartCoroutine(SpawnWave (waves[next_wave]));
-            }
-            else
-            {
-                wave_countdown -= Time.deltaTime;
+                StartCoroutine(SpawnWave(waves[next_wave]));
             }
         }
+        else
+        {
+            wave_countdown -= Time.deltaTime;
+        }
+    }
+
+    void WaveCompleted()
+    {
+        Debug.Log("wave complete");
+
+        // start counting down again
+        state = SpawnState.COUNTING;
+
+        wave_countdown = time_between_waves;
+
+        // check if index of next wave is > number of waves
+        if (next_wave + 1 > waves.Length - 1)
+        {
+            next_wave = 0;
+
+            // from here can edit waves (stat multiplier, game finish screen, start new scene, etc.)
+            Debug.Log("completed all waves, looping...");
+        }
+        else
+        {
+            // continue to next wave
+            next_wave++;
+        }
+
+    }
+
+    // check if enemy alive or 💀
+    bool EnemyIsAlive()
+    {
+        search_countdown -= Time.deltaTime;
+        if (search_countdown <= 0f)
+        {
+            // enemies are still alive, check again in one second
+            search_countdown = 1f;
+
+            if (GameObject.FindGameObjectWithTag("Enemy") == null)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     // wave nursery (method will wait a certain amount of seconds before continuing)
     IEnumerator SpawnWave(Wave _wave)
     {
+        Debug.Log("Spawning wave: " + _wave.name);
+
         // fight begins
         state = SpawnState.SPAWNING;
 
@@ -67,7 +137,7 @@ public class WaveSpawner : MonoBehaviour
             SpawnEnemy(_wave.enemy);
 
             // wait some time before spawning another enemy
-            yield return new WaitForSeconds(1f/_wave.spawn_rate);
+            yield return new WaitForSeconds(1f / _wave.spawn_rate);
         }
 
         // wait for player to finish the wave
@@ -78,8 +148,14 @@ public class WaveSpawner : MonoBehaviour
     }
 
     // where enemies are born
-    void SpawnEnemy (Transform _enemy)
+    void SpawnEnemy(Transform _enemy)
     {
         Debug.Log("Spawning: " + _enemy.name);
+
+        // choose random spawn point
+        Transform _sp = spawn_points[Random.Range(0, spawn_points.Length)];
+
+        // instantiate enemy at Game Manager's position (0,0,0)
+        Instantiate(_enemy, _sp.position, _sp.rotation);
     }
 }
