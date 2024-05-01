@@ -121,7 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 304482552549805046}
   - component: {fileID: 7361489134818458061}
-  - component: {fileID: 5465724308132578170}
+  - component: {fileID: 8800444787502645394}
   m_Layer: 0
   m_Name: Damage Trigger
   m_TagString: Untagged
@@ -165,7 +165,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5465724308132578170
+--- !u!114 &8800444787502645394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,9 +174,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2485618809685560174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e67571efd4b078d4cb66d892319ca544, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a36dd326dc985641b32d6ec531c6c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagDamages:
+  - tag: Player
+    damage: 2
 --- !u!1 &3444939069134629597
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,10 +388,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94af5a58141e20b47b3b6f18eb36330d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthController: {fileID: 7522254260113536493}
   slider: {fileID: 5275405902415132461}
   Camera: {fileID: 0}
-  Target: {fileID: 6604477065953171176}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &4924589616176690450
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,10 +683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 50
-  HP: 50
-  HealthBar: {fileID: 8292106105288736150}
-  EnemyAgent: {fileID: 3036851119060545210}
+  initialHealth: 100
+  currentHealth: 100
 --- !u!65 &1194706109247690853
 BoxCollider:
   m_ObjectHideFlags: 0

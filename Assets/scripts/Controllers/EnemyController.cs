@@ -1,9 +1,10 @@
 // https://www.youtube.com/watch?v=UjkSFoLxesw
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(HealthController))]
 public class EnemyController : MonoBehaviour
 {
     public Transform target;
@@ -13,9 +14,10 @@ public class EnemyController : MonoBehaviour
 
     NavMeshAgent agent;
     Animator animator;
+    HealthController healthController;
 
     bool alreadyAttacked;
-    bool isDead;
+
 
     public void Initialize(Transform t)
     {
@@ -25,13 +27,13 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        healthController = GetComponent<HealthController>();
         animator = GetComponentInChildren<Animator>();
 
         agent.speed = speed;
         agent.stoppingDistance = attackRadius;
 
         alreadyAttacked = false;
-        isDead = false;
     }
 
     void OnDrawGizmosSelected() {
@@ -43,20 +45,20 @@ public class EnemyController : MonoBehaviour
     {
         float targetDist = Vector3.Distance(transform.position, target.position);
 
-        if (isDead) {
+        // Should I die?
+        if (healthController.GetHP() <= 0.0f) {
             StartCoroutine(Kill());
         }
+
+        // Should I approach?
         else if (targetDist > attackRadius) {
             ApproachTarget();
         }
+
+        // Should I attack?
         else {
             AttackTarget();
         }
-    }
-
-    public void Die()
-    {
-        isDead = true;
     }
 
     public IEnumerator Kill() {

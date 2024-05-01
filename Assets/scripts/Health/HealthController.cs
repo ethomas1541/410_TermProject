@@ -4,32 +4,31 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-    // note this style of damage system only works if a rigidbody is attached to the object
-    public float MaxHP = 100;
+    // Initial values
+    public int initialHealth = 100;
+    public int currentHealth = 100;
 
-    // hitpoints
-    public float HP = 100;
+    // Observer listener pattern, not all objects need a health bar
+    public delegate void HealthChanged(int currentHealth);
+    public event HealthChanged OnHealthChange;
 
-    [SerializeField] HPBar HealthBar;
-
-
-    // Start is called before the first frame update
-    public EnemyController EnemyAgent;
-
-    void Start()
+    public void TakeDamage(int damage)
     {
-        HealthBar.UpdateHPBar(HP, MaxHP);
-        // Get a reference to the secondary controller script
-        EnemyAgent = GetComponent<EnemyController>();
+        currentHealth -= damage;
+        OnHealthChange?.Invoke(currentHealth);
     }
 
-    public void TakeDamage(float DmgAmount)
-    {
-        HP -= DmgAmount;
-        HealthBar.UpdateHPBar(HP, MaxHP);
-        if (HP <= 0)
-        {
-            EnemyAgent.Die();
-        }
+    public void ResetHealth() {
+        currentHealth = initialHealth;
+    }
+
+    public void Heal(int healAmount) {
+        currentHealth += healAmount;
+        if (currentHealth > initialHealth) { ResetHealth(); }
+        OnHealthChange?.Invoke(currentHealth);
+    }
+
+    public float GetHP() {
+        return currentHealth;
     }
 }
