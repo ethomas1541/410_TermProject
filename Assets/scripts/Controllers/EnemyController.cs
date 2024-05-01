@@ -30,6 +30,9 @@ public class EnemyController : MonoBehaviour
         healthController = GetComponent<HealthController>();
         animator = GetComponentInChildren<Animator>();
 
+        // Subscribe to the on death method
+        healthController.OnDeath += OnDie;
+
         agent.speed = speed;
         agent.stoppingDistance = attackRadius;
 
@@ -45,13 +48,8 @@ public class EnemyController : MonoBehaviour
     {
         float targetDist = Vector3.Distance(transform.position, target.position);
 
-        // Should I die?
-        if (healthController.GetHP() <= 0.0f) {
-            StartCoroutine(Kill());
-        }
-
         // Should I approach?
-        else if (targetDist > attackRadius) {
+        if (targetDist > attackRadius) {
             ApproachTarget();
         }
 
@@ -61,7 +59,11 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public IEnumerator Kill() {
+    public void OnDie() {
+        StartCoroutine(Kill());
+    }
+
+    IEnumerator Kill() {
         animator.SetBool("Approaching", false);
         animator.SetTrigger("Die");
 

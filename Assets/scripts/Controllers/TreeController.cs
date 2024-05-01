@@ -7,19 +7,19 @@ public class TreeController : MonoBehaviour
     HealthController healthController;
     Animator animator;
 
-    void Start() {
+    void Awake() {
         healthController = GetComponent<HealthController>();
         animator = GetComponentInChildren<Animator>();
+
+        // Subscribe to the OnDeath event
+        healthController.OnDeath += OnDie;
     }
 
-    void FixedUpdate()
-    {
-        if (healthController.GetHP() <= 0.0f) {
-            StartCoroutine(Die());
-        }
+    public void OnDie() {
+        StartCoroutine(Kill());
     }
 
-    IEnumerator Die()
+    IEnumerator Kill()
     {
         animator.SetTrigger("Fall");
 

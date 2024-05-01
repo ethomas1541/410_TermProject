@@ -8,13 +8,19 @@ public class HealthController : MonoBehaviour
     public int initialHealth = 100;
     public int currentHealth = 100;
 
-    // Observer listener pattern, not all objects need a health bar
+    // Observer listener pattern for health change
     public delegate void HealthChanged(int currentHealth);
     public event HealthChanged OnHealthChange;
+
+    // Observer listener pattern for on death
+    public delegate void Death();
+    public event Death OnDeath;
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
+        if (currentHealth <= 0) { OnDeath?.Invoke(); }
         OnHealthChange?.Invoke(currentHealth);
     }
 
