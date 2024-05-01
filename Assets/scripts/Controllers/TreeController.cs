@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(HealthController))]
 public class TreeController : MonoBehaviour
 {
