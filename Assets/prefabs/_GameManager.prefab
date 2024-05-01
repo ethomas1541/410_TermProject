@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3004822294303122168}
+  - component: {fileID: 4863313733082976628}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -31,3 +32,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4863313733082976628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7724175308807815978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10aac8c8cb749ef40ac854eb8044330e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - name: first
+    enemy: {fileID: 0}
+    count: 1
+    spawn_rate: 1
+  - name: second
+    enemy: {fileID: 0}
+    count: 2
+    spawn_rate: 1
+  time_between_waves: 5
+  wave_countdown: 0
