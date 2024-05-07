@@ -60,7 +60,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5564328870855664774}
   m_Father: {fileID: 5376599920383123956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1134487533698533633
@@ -733,6 +734,7 @@ GameObject:
   - component: {fileID: 180106018054325863}
   - component: {fileID: 4223202617536465153}
   - component: {fileID: 4947863331089324912}
+  - component: {fileID: 5038641918924850013}
   - component: {fileID: 8223094783891609760}
   - component: {fileID: 5349631958813425344}
   m_Layer: 0
@@ -927,6 +929,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: 0
   m_Camera: {fileID: 0}
+--- !u!114 &5038641918924850013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4867265875309325091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 100
+  currentHealth: 100
 --- !u!114 &8223094783891609760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2248,8 +2264,7 @@ Transform:
   m_LocalPosition: {x: -0.0368, y: -1.0173, z: 0.0376}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5564328870855664774}
+  m_Children: []
   m_Father: {fileID: 8227258812404634451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8813663151268049890
@@ -2311,13 +2326,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8904809428462969534}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.18600674, y: 0.32167235, z: 0.8112266, w: 0.4514861}
-  m_LocalPosition: {x: 0.083424814, y: 0.080851614, z: -0.028240632}
-  m_LocalScale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+  m_LocalRotation: {x: -0.33947322, y: 0.53811765, z: -0.17734809, w: -0.7508229}
+  m_LocalPosition: {x: 0.98641735, y: 0.72996694, z: 0.53051794}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4013151070644014350}
-  m_Father: {fileID: 5515544408120703651}
+  m_Father: {fileID: 2715826128498706215}
   m_LocalEulerAnglesHint: {x: 52.38, y: 0, z: 0}
 --- !u!65 &6513554905764041229
 BoxCollider:
@@ -2367,4 +2382,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagDamages:
   - tag: Enemy
-    damage: 5
+    damage: 25
+  - tag: Tree
+    damage: 25
