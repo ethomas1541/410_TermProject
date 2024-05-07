@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class LoggingCamp : MonoBehaviour
 {
-    void CampDestroyed()
+    public int CampLevel = 0;
+    public void CampDestroyed()
     {
         //todo: write code for lose condition when camp is destroyed
     }

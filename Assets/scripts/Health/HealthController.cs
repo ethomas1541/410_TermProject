@@ -34,6 +34,12 @@ public class HealthController : MonoBehaviour
         OnHealthChange?.Invoke(currentHealth);
     }
 
+    public void IncMaxHP(int UpgradeQ) {
+        initialHealth += UpgradeQ;
+        ResetHealth(); 
+        OnHealthChange?.Invoke(currentHealth);
+    }
+
     public float GetHP() {
         return currentHealth;
     }
