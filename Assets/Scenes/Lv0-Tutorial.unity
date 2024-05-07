@@ -1917,6 +1917,10 @@ PrefabInstance:
       value: Tree
       objectReference: {fileID: 0}
     - target: {fileID: 3917392273930658488, guid: d472bc5b0ed119d428dc6e21ec5fe944, type: 3}
+      propertyPath: tagDamages.Array.data[0].damage
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917392273930658488, guid: d472bc5b0ed119d428dc6e21ec5fe944, type: 3}
       propertyPath: tagDamages.Array.data[1].damage
       value: 25
       objectReference: {fileID: 0}
@@ -2566,6 +2570,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b87c20ef265924545afb4d158683957e, type: 3}
+--- !u!20 &1300104094 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4768729298744418517, guid: ab24c4f6a2c98ab42a93b0aab4ffeab9, type: 3}
+  m_PrefabInstance: {fileID: 1438585356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1324022912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3622,8 +3631,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   E1: {fileID: 6398529275918465791, guid: 23c778456eda38e408625f47062b3746, type: 3}
-  player: {fileID: 0}
-  mainCamera: {fileID: 0}
+  player: {fileID: 922059844}
+  mainCamera: {fileID: 1300104094}
 --- !u!65 &1931621947
 BoxCollider:
   m_ObjectHideFlags: 0
