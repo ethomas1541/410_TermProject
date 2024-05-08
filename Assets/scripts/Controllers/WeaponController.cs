@@ -12,6 +12,7 @@ public class WeaponController : MonoBehaviour
     void Start() {
         defaultParent = GetComponentInParent<Transform>();
         weaponCollider = GetComponent<Collider>();
+        EndAttack();
     }
 
     public void Equipt(Transform anchor) {
@@ -25,12 +26,10 @@ public class WeaponController : MonoBehaviour
     }
 
     public void StartAttack() {
-        Debug.Log("Collider is active");
         weaponCollider.enabled = true;
     }
 
     public void EndAttack() {
-        Debug.Log("Collider is inactive");
         weaponCollider.enabled = false;
     }
 }

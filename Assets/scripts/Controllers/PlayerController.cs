@@ -103,14 +103,16 @@ public class PlayerController : MonoBehaviour
     {
         WeaponController currentWeapon = weaponInventory.GetCurrentWeapon();
 
-        // Begin the attack
-        currentWeapon.StartAttack();
         animator.SetTrigger("Attack");
 
-        // Wait for the duration of the attack animation
-        AnimatorStateInfo attackStateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        float animationDuration = attackStateInfo.length;
-        yield return new WaitForSeconds(animationDuration);
+        // Wait for the current transition to end
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f );
+
+        // Begin the attack
+        currentWeapon.StartAttack();
+
+        // Wait for the attack animation to end
+        yield return new WaitWhile(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f);
 
         // End the attack
         currentWeapon.EndAttack();
