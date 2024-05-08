@@ -71,7 +71,7 @@ public class WaveSpawner : MonoBehaviour
             // make sure waves are not already spawning
             if (state != SpawnState.SPAWNING)
             {
-                // calls the IEnumerator SpawnWave method to start spawning 
+                // calls the IEnumerator SpawnWave method to start spawning
                 StartCoroutine(SpawnWave(waves[next_wave]));
             }
         }
@@ -131,7 +131,7 @@ public class WaveSpawner : MonoBehaviour
         // fight begins
         state = SpawnState.SPAWNING;
 
-        // spawn 
+        // spawn
         for (int i = 0; i < _wave.count; i++)
         {
             SpawnEnemy(_wave.enemy);
@@ -156,6 +156,9 @@ public class WaveSpawner : MonoBehaviour
         Transform _sp = spawn_points[Random.Range(0, spawn_points.Length)];
 
         // instantiate enemy at Game Manager's position (0,0,0)
-        Instantiate(_enemy, _sp.position, _sp.rotation);
+        Transform e = Instantiate(_enemy, _sp.position, _sp.rotation);
+
+        // Make this game object active
+        e.gameObject.SetActive(true);
     }
 }
