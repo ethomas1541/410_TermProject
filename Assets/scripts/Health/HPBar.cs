@@ -6,14 +6,11 @@ public class HPBar : MonoBehaviour
 {
     public HealthController healthController;
     public Slider slider;
-    public Camera Camera;
-
-    public void Initialize(Camera c)
-    {
-        Camera = c;
-    }
+    private new Camera camera;
 
     void Start() {
+
+        camera = Camera.main;
 
         // Subscribe to health controller notificiations
         healthController.OnHealthChange += UpdateHPBar;
@@ -21,6 +18,10 @@ public class HPBar : MonoBehaviour
         // Update inital values
         slider.maxValue = healthController.initialHealth;
         slider.value = healthController.currentHealth;
+    }
+
+    void OnEnable() {
+        // Subscribe to health controller notificiations
     }
 
     void OnDisable()
@@ -36,6 +37,6 @@ public class HPBar : MonoBehaviour
 
     void Update()
     {
-        transform.rotation = Camera.transform.rotation;
+        transform.rotation = camera.transform.rotation;
     }
 }
