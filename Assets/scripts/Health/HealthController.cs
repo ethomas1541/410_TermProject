@@ -12,6 +12,10 @@ public class HealthController : MonoBehaviour
     public delegate void HealthChanged(int currentHealth);
     public event HealthChanged OnHealthChange;
 
+    // Observer listener pattern for taking damage
+    public delegate void TakeDamge();
+    public event TakeDamge OnTakeDamage;
+
     // Observer listener pattern for on death
     public delegate void Death();
     public event Death OnDeath;
@@ -21,7 +25,9 @@ public class HealthController : MonoBehaviour
         currentHealth -= damage;
 
         if (currentHealth <= 0) { OnDeath?.Invoke(); }
+
         OnHealthChange?.Invoke(currentHealth);
+        OnTakeDamage?.Invoke();
     }
 
     public void ResetHealth() {
@@ -36,7 +42,7 @@ public class HealthController : MonoBehaviour
 
     public void IncMaxHP(int UpgradeQ) {
         initialHealth += UpgradeQ;
-        ResetHealth(); 
+        ResetHealth();
         OnHealthChange?.Invoke(currentHealth);
     }
 

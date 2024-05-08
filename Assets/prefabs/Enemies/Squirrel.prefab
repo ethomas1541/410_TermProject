@@ -619,7 +619,7 @@ NavMeshAgent:
   m_Acceleration: 256
   avoidancePriority: 50
   m_AngularSpeed: 256
-  m_StoppingDistance: 1
+  m_StoppingDistance: 2.35
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -642,7 +642,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 3.5
   attackSpeed: 0.5
-  attackRadius: 2.2
+  attackRadius: 2.78
 --- !u!54 &2532694430436282925
 Rigidbody:
   m_ObjectHideFlags: 0
