@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     Animator animator;
     HealthController healthController;
+    DamageTrigger damageTrigger;
 
     bool alreadyAttacked;
 
@@ -29,6 +30,7 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         healthController = GetComponent<HealthController>();
         animator = GetComponentInChildren<Animator>();
+        damageTrigger = GetComponentInChildren<DamageTrigger>();
 
         // Subscribe to the on death method
         healthController.OnDeath += OnDie;
@@ -96,14 +98,25 @@ public class EnemyController : MonoBehaviour
         FaceTarget();
 
         if (!alreadyAttacked) {
-            animator.SetTrigger("Attack");
+             StartCoroutine(Attack());
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), attackSpeed);
         }
     }
 
+    IEnumerator Attack() {
+        damageTrigger.EnableDamage();
+        animator.SetTrigger("Attack");
+
+        // Wait for the current transition to end
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f );
+
+        // Wait for the attack animation to end
+        yield return new WaitWhile(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f);
+        damageTrigger.EnableDamage();
+    }
+
     void ResetAttack() {
         alreadyAttacked = false;
     }
-
 }

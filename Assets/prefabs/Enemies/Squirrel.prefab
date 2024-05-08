@@ -138,8 +138,8 @@ Transform:
   m_GameObject: {fileID: 2485618809685560174}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.051, y: 0.307, z: 1.15}
-  m_LocalScale: {x: 0.76, y: 0.76, z: 0.76}
+  m_LocalPosition: {x: 0.051, y: 0.66, z: 1.46}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7138769852165246188}
@@ -390,7 +390,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthController: {fileID: 7522254260113536493}
   slider: {fileID: 5275405902415132461}
-  Camera: {fileID: 0}
 --- !u!1 &4924589616176690450
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +642,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 3.5
   attackSpeed: 0.5
-  attackRadius: 2.5
+  attackRadius: 2.2
 --- !u!54 &2532694430436282925
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -669,7 +668,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &7522254260113536493
 MonoBehaviour:

@@ -104,7 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthController: {fileID: 3673664288114880482}
   slider: {fileID: 1350933359716057427}
-  Camera: {fileID: 0}
 --- !u!1 &4413702581622929513
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +668,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &3673664288114880482
 MonoBehaviour:
