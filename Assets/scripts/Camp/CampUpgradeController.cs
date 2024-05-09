@@ -9,12 +9,10 @@ public class CampUpgradeController : MonoBehaviour
     public GameObject UpgradePrompt;
 
     // accsssing player currency
-    public GameObject Player;
-    private WoodInventory Wallet;
+    public WoodInventory Wallet;
 
     // health upgrades/repairs
-    public GameObject CampOBJ;
-    private HealthController HPcontroller;
+    public HealthController HPcontroller;
     private int HealthLvL = 0;
     public int lvlCost = 25;
 
@@ -26,9 +24,6 @@ public class CampUpgradeController : MonoBehaviour
 
     void Start() 
     {
-        // get info from other classes that we need here
-        HPcontroller = CampOBJ.GetComponent<HealthController>();
-        Wallet = Player.GetComponent<WoodInventory>();
         // set upgrade objects to inactive
         Walls.SetActive(false);
         Babe.SetActive(false);

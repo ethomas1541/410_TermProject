@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeMenu: {fileID: 8113311608650518400}
   UpgradePrompt: {fileID: 5509300431997063822}
-  Player: {fileID: 0}
-  CampOBJ: {fileID: 9201635243734732745}
+  Wallet: {fileID: 0}
+  HPcontroller: {fileID: 3205873852933900923}
   lvlCost: 50
   Walls: {fileID: 7829410186532627106}
   Babe: {fileID: 5512225062852489200}
