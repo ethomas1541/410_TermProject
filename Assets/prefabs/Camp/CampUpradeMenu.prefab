@@ -992,7 +992,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1623264526318475464}
-  - component: {fileID: 5366043432209793431}
   - component: {fileID: 1439652904093291743}
   m_Layer: 0
   m_Name: CampUpgradeController
@@ -1016,18 +1015,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5224015201778652111}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5366043432209793431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5661022816673968824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6909f8a259e93d4298484075d2702bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1439652904093291743
 MonoBehaviour:
   m_ObjectHideFlags: 0
