@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CampUpgradeController : MonoBehaviour
-{
+{   
+    public GameObject upgradeMenu;
     public void RepairCamp()
     {
         
@@ -31,6 +32,6 @@ public class CampUpgradeController : MonoBehaviour
 
     public void ExitMenu()
     {
-
+        upgradeMenu.SetActive(false);
     }
 }

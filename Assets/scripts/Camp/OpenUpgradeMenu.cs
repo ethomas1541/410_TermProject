@@ -7,23 +7,23 @@ public class OpenUpgradeMenu : MonoBehaviour
 {
     public GameObject upgradeMenu;
     private bool isPlayerNearby = false;
+    public KeyCode openMenuKey = KeyCode.F;
 
     public void Start()
     {
         upgradeMenu.SetActive(false);
     }
 
-    // F is the keybind for interacting
-    public void OnInteract()
+// couldnt get this to work with the new unity input system 
+    void Update()
     {
-        //Check if the player is nearby and presses the designated key to open the menu
-        if (isPlayerNearby)
+        // Check if the player is nearby and presses the designated key to open the menu
+        if (isPlayerNearby && Input.GetKeyDown(openMenuKey))
         {
             // Open the upgrade menu when the player is nearby and presses the key
             upgradeMenu.SetActive(true);
         }
-        Debug.Log("Upgrade menu opened!");
-    }
+    } 
 
     private void OnTriggerEnter(Collider other)
     {
