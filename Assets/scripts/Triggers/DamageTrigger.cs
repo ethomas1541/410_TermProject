@@ -9,22 +9,23 @@ public class TagDamage {
     public int damage;
 }
 
+[RequireComponent(typeof(Collider))]
 public class DamageTrigger : MonoBehaviour
 {
     public List<TagDamage> tagDamages = new List<TagDamage>();
-    private BoxCollider col;
+    private Collider damageCollider;
 
     void Start() {
-        col = GetComponent<BoxCollider>();
+        damageCollider = GetComponent<Collider>();
         DisableDamage();
     }
 
     public void EnableDamage() {
-        col.enabled = true;
+        damageCollider.enabled = true;
     }
 
     public void DisableDamage() {
-        col.enabled = false;
+        damageCollider.enabled = false;
     }
 
     // note this style of damage trigger only works if a rigidbody is attached to the object
@@ -32,7 +33,6 @@ public class DamageTrigger : MonoBehaviour
     {
         foreach (TagDamage td in tagDamages) {
             if (other.tag == td.tag) {
-                Debug.Log($"Hit {other}");
                 other.GetComponent<HealthController>().TakeDamage(td.damage);
             }
         }

@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(DamageTrigger))]
 public class WeaponController : MonoBehaviour
 {
-    public int damage;
-    private Collider weaponCollider;
     private Transform defaultParent;
+    private DamageTrigger damageTrigger;
 
     void Start() {
         defaultParent = GetComponentInParent<Transform>();
-        weaponCollider = GetComponent<Collider>();
-        EndAttack();
+        damageTrigger = GetComponent<DamageTrigger>();
+        damageTrigger.DisableDamage();
     }
 
     public void Equipt(Transform anchor) {
@@ -26,10 +25,10 @@ public class WeaponController : MonoBehaviour
     }
 
     public void StartAttack() {
-        weaponCollider.enabled = true;
+        damageTrigger.EnableDamage();
     }
 
     public void EndAttack() {
-        weaponCollider.enabled = false;
+        damageTrigger.DisableDamage();
     }
 }
