@@ -2871,11 +2871,11 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 2.216753, y: 1.1145785, z: 1.6937296}
-  m_Center: {x: -0.06812048, y: 1.2037426, z: 0.7462555}
+  m_Size: {x: 2.216753, y: 1.4348123, z: 2.1038404}
+  m_Center: {x: -0.06812048, y: 1.0436217, z: 0.95131236}
 --- !u!114 &2385330245081812169
 MonoBehaviour:
   m_ObjectHideFlags: 0
