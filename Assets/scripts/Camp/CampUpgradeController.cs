@@ -40,7 +40,7 @@ public class CampUpgradeController : MonoBehaviour
         {
             int dmgTaken = HPcontroller.initialHealth - HPcontroller.currentHealth;
             int RepairCost = 2 * dmgTaken;
-            if (Wallet.WoodAmount >= RepairCost);
+            if (Wallet.WoodAmount >= RepairCost)
             {
                 HPcontroller.Heal(dmgTaken);
                 Wallet.SpendWood(RepairCost);

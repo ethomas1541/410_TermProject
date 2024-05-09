@@ -6,8 +6,8 @@ public class HPBarHUD : MonoBehaviour
     public HealthController healthController;
     public Slider slider;
 
-    void Start() {
-
+    void Start()
+    {
         // Subscribe to health controller notificiations
         healthController.OnHealthChange += UpdateHPBar;
 
