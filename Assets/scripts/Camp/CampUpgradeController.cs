@@ -8,10 +8,15 @@ public class CampUpgradeController : MonoBehaviour
     public GameObject upgradeMenu;
     public GameObject UpgradePrompt;
 
+    // accsssing player currency
+    public GameObject Player;
+    private WoodInventory Wallet;
+
     // health upgrades/repairs
     public GameObject CampOBJ;
     private HealthController HPcontroller;
     private int HealthLvL = 0;
+    public int lvlCost = 25;
 
     // the walls
     public GameObject Walls;
@@ -21,7 +26,10 @@ public class CampUpgradeController : MonoBehaviour
 
     void Start() 
     {
+        // get info from other classes that we need here
         HPcontroller = CampOBJ.GetComponent<HealthController>();
+        Wallet = Player.GetComponent<WoodInventory>();
+        // set upgrade objects to inactive
         Walls.SetActive(false);
         Babe.SetActive(false);
     }
@@ -30,7 +38,13 @@ public class CampUpgradeController : MonoBehaviour
     {
         if (HPcontroller.currentHealth < HPcontroller.initialHealth)
         {
-            HPcontroller.Heal(HPcontroller.initialHealth - HPcontroller.currentHealth);
+            int dmgTaken = HPcontroller.initialHealth - HPcontroller.currentHealth;
+            int RepairCost = 2 * dmgTaken;
+            if (Wallet.WoodAmount >= RepairCost);
+            {
+                HPcontroller.Heal(dmgTaken);
+                Wallet.SpendWood(RepairCost);
+            }
         }
     }
 
@@ -38,25 +52,44 @@ public class CampUpgradeController : MonoBehaviour
     {
         if (HealthLvL < 5)
         {
-            HPcontroller.IncMaxHP(25);
-            HealthLvL ++;
+            if (Wallet.WoodAmount >= lvlCost)
+            {
+                Wallet.SpendWood(lvlCost);
+                HPcontroller.IncMaxHP(25);
+                HealthLvL ++;
+                lvlCost += 25;
+            }
         }
     }
 
     public void BuyOXPet()
     {
-        Babe.SetActive(true);
+        if (Wallet.WoodAmount >= 200)
+        {
+            Wallet.SpendWood(200);
+            Babe.SetActive(true);
+        }
     }
 
     public void Buildwall()
     {
-        Walls.SetActive(false);
-        Walls.SetActive(true);
+        if (Wallet.WoodAmount >= 120)
+        {
+            Wallet.SpendWood(120);
+            Walls.SetActive(false);
+            Walls.SetActive(true);
+        }
     }
 
     public void HirePoacher()
     {
         // Implementation
+        if (Wallet.WoodAmount >= 300)
+        {
+            Wallet.SpendWood(300);
+            // poacher.SetActive(true);
+            // TODO: find asset for poacher and set behavior
+        }
     }
 
     public void ExitMenu()
