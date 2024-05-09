@@ -6,20 +6,20 @@ using UnityEngine;
 
 public class LoggingCamp : MonoBehaviour
 {
-    public int CampLevel = 0;
+    //public int CampLevel = 0;
     
     public void CampDestroyed()
     {
         //todo: write code for lose condition when camp is destroyed
     }
 
-    public void UpgradeCamp()
-    {
+   // public void UpgradeCamp()
+   // {
         // todo: logic for buying camp upgrades
-    }
+   // }
 
-    public void RepairCamp()
-    {
-        // todo: logic for repairing camp
-    }
+   // public void RepairCamp()
+    //{
+   //     // todo: logic for repairing camp
+   // }
 }
