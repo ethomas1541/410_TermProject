@@ -16,10 +16,14 @@ public class CampUpgradeController : MonoBehaviour
     // the walls
     public GameObject Walls;
 
+    // Babe the Blue Bull
+    public GameObject Babe;
+
     void Start() 
     {
         HPcontroller = CampOBJ.GetComponent<HealthController>();
         Walls.SetActive(false);
+        Babe.SetActive(false);
     }
 
     public void RepairCamp()
@@ -41,7 +45,7 @@ public class CampUpgradeController : MonoBehaviour
 
     public void BuyOXPet()
     {
-        // Implementation
+        Babe.SetActive(true);
     }
 
     public void Buildwall()
