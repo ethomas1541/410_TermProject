@@ -36,7 +36,6 @@ public class EnemyController : MonoBehaviour
         healthController.OnDeath += OnDie;
 
         agent.speed = speed;
-        agent.stoppingDistance = attackRadius;
 
         alreadyAttacked = false;
     }
