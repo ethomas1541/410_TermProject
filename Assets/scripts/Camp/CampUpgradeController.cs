@@ -1,6 +1,10 @@
+// Hunter McMahon
+// 5/9/2024
+// M - 5/10/2024
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CampUpgradeController : MonoBehaviour
 {   
@@ -15,13 +19,23 @@ public class CampUpgradeController : MonoBehaviour
     public HealthController HPcontroller;
     private int HealthLvL = 0;
     public int lvlCost = 25;
+    public int dmgTaken = 0;
+    public int RepairCost = 0;
+    public TextMeshProUGUI RepairCostTxt;
+    public TextMeshProUGUI UpgradeCostTxt;
+    
 
     // the walls
     public GameObject Walls;
     public int WallsCost = 120;
+    public TextMeshProUGUI WallsCostTXT;
 
     // Babe the Blue Bull
     public GameObject Babe;
+    public TextMeshProUGUI BabeCostTxT;
+
+    // poacher
+    public TextMeshProUGUI PoacherCostTxT;
 
     void Start() 
     {
@@ -34,12 +48,13 @@ public class CampUpgradeController : MonoBehaviour
     {
         if (HPcontroller.currentHealth < HPcontroller.initialHealth)
         {
-            int dmgTaken = HPcontroller.initialHealth - HPcontroller.currentHealth;
-            int RepairCost = 2 * dmgTaken;
             if (Wallet.WoodAmount >= RepairCost)
             {
                 HPcontroller.Heal(dmgTaken);
                 Wallet.SpendWood(RepairCost);
+                dmgTaken = 0;
+                RepairCost = 0;
+                RepairCostTxt.text = "Camp HP Full";
             }
         }
     }
@@ -54,13 +69,18 @@ public class CampUpgradeController : MonoBehaviour
                 HPcontroller.IncMaxHP(25);
                 HealthLvL ++;
                 lvlCost += 25;
+                UpgradeCostTxt.text = lvlCost + "Wood";
+            }
+            if (HealthLvL == 5)
+            {
+                UpgradeCostTxt.text = "Camp At Max Level";
             }
         }
     }
 
     public void BuyOXPet()
     {
-        if (Wallet.WoodAmount >= 200)
+        if (Wallet.WoodAmount >= 200 && !(Babe.activeSelf))
         {
             Wallet.SpendWood(200);
             Babe.SetActive(true);
@@ -75,6 +95,7 @@ public class CampUpgradeController : MonoBehaviour
             SetActiveRecursively(Walls, false);
             SetActiveRecursively(Walls, true);
             WallsCost = 0;
+            WallsCostTXT.text = "All Walls Built";
         }
     }
 

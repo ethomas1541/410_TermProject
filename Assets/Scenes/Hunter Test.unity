@@ -217,6 +217,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &858251684 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3205873852933900923, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+  m_PrefabInstance: {fileID: 3954628717737197115}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1325478208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05ab208ac54e464aa477c7fecf19b1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoodAmount: 300
+  WoodAmount: 2000
   WoodHUD: {fileID: 1544357502}
 --- !u!114 &1544357502 stripped
 MonoBehaviour:
@@ -240,6 +251,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1687613228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6760047539869964670, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+  m_PrefabInstance: {fileID: 3954628717737197115}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b260dcb8d2fdb7e4c8299560e468f768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1833846014
@@ -640,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 255648409423899601, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Camp
       objectReference: {fileID: 0}
     - target: {fileID: 459055495486279899, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -672,7 +694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 747587322917314753, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Camp
       objectReference: {fileID: 0}
     - target: {fileID: 777816354582837183, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: currentHealth
@@ -689,10 +711,26 @@ PrefabInstance:
     - target: {fileID: 881552336411299727, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: initialHealth
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085558786142708578, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085558786142708578, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085558786142708578, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085558786142708578, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1365775363243891446, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Camp
       objectReference: {fileID: 0}
     - target: {fileID: 1427331887561461755, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -716,7 +754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1766330416558905905, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Camp
       objectReference: {fileID: 0}
     - target: {fileID: 1898249138765447168, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: currentHealth
@@ -728,11 +766,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2049310261270041010, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Camp
       objectReference: {fileID: 0}
     - target: {fileID: 2847143225305934345, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Camp
       objectReference: {fileID: 0}
     - target: {fileID: 2897974730529495822, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: currentHealth
@@ -752,7 +790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3138372621640870968, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Camp
       objectReference: {fileID: 0}
     - target: {fileID: 3377715086041395657, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -788,8 +826,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895584066062050765, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Camp
       objectReference: {fileID: 0}
+    - target: {fileID: 4560316157043435288, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: CampUpgader
+      value: 
+      objectReference: {fileID: 1687613228}
+    - target: {fileID: 4560316157043435288, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: healthController
+      value: 
+      objectReference: {fileID: 858251684}
     - target: {fileID: 4645625615961512692, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: currentHealth
       value: 40
@@ -798,9 +844,25 @@ PrefabInstance:
       propertyPath: initialHealth
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 4667626903721604248, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667626903721604248, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667626903721604248, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667626903721604248, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4867476275385711848, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Camp
       objectReference: {fileID: 0}
     - target: {fileID: 5427505809369656751, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: currentHealth
@@ -862,6 +924,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 6317158706722814800, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317158706722814800, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317158706722814800, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317158706722814800, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6366684051364419274, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -880,7 +958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6420799569682241376, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Camp
       objectReference: {fileID: 0}
     - target: {fileID: 6760047539869964670, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: Player
@@ -922,6 +1000,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7075730943432237163, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075730943432237163, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075730943432237163, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075730943432237163, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7829410186532627106, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
       value: Untagged
@@ -936,19 +1030,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8401350813969805127, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Camp
       objectReference: {fileID: 0}
     - target: {fileID: 8563404077669671242, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Camp
       objectReference: {fileID: 0}
     - target: {fileID: 9085767891143325997, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 9139114034511231233, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139114034511231233, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139114034511231233, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139114034511231233, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9201635243734732745, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_Name
       value: Camp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201635243734732745, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

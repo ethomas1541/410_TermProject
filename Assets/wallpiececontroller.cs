@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class wallpiececontroller : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class wallpiececontroller : MonoBehaviour
         //StartCoroutine(Kill());
         transform.gameObject.SetActive(false);
         UpgradeCTRL.WallsCost += 10;
+        UpgradeCTRL.WallsCostTXT.text = UpgradeCTRL.WallsCost + " Wood";
         healthController.ResetHealth();
     }
 
