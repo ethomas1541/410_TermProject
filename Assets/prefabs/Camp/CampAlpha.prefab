@@ -4584,6 +4584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeMenu: {fileID: 8113311608650518400}
   UpgradePrompt: {fileID: 5509300431997063822}
+  UpgCtrl: {fileID: 6760047539869964670}
   openMenuKey: 102
 --- !u!1 &5949329514539244097
 GameObject:

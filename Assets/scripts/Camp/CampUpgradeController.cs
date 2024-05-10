@@ -8,6 +8,9 @@ using TMPro;
 
 public class CampUpgradeController : MonoBehaviour
 {   
+    // Events needed for the tutorial level
+     public delegate void MenuCLosed();
+     public event MenuCLosed OnExitMenu;
     //UI stuff
     public GameObject upgradeMenu;
     public GameObject UpgradePrompt;
@@ -113,7 +116,8 @@ public class CampUpgradeController : MonoBehaviour
     public void ExitMenu()
     {
         upgradeMenu.SetActive(false);
-        UpgradePrompt.SetActive(true);
+        //UpgradePrompt.SetActive(true);
+        OnExitMenu?.Invoke();
     }
 
     public static void SetActiveRecursively(GameObject obj, bool active)

@@ -7,6 +7,7 @@ public class OpenUpgradeMenu : MonoBehaviour
 {
     public GameObject upgradeMenu;
     public GameObject UpgradePrompt;
+    public CampUpgradeController UpgCtrl;
     private bool isPlayerNearby = false;
     public KeyCode openMenuKey = KeyCode.F;
 
@@ -46,7 +47,7 @@ public class OpenUpgradeMenu : MonoBehaviour
         {
             // Player is no longer nearby
             isPlayerNearby = false;
-            upgradeMenu.SetActive(false);
+            UpgCtrl.ExitMenu();
             UpgradePrompt.SetActive(false);
         }
     }
