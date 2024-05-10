@@ -213,7 +213,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 304482552549805046}
-  - {fileID: 1480894510038897235}
+  - {fileID: 6035976588212970070}
   m_Father: {fileID: 6604477065953171176}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5407520278575853621
@@ -503,7 +503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3}
+  m_AnchoredPosition: {x: 0, y: 4.08}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4163416893168900064
@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 7522254260113536493}
   - component: {fileID: 1194706109247690853}
   m_Layer: 0
-  m_Name: Raccoon
+  m_Name: Goat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,7 +707,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.76, y: 1.17, z: 2.33}
   m_Center: {x: 0, y: 0.91, z: 0}
---- !u!1001 &1371215006448530872
+--- !u!1001 &6074970825113421245
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -715,58 +715,58 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7138769852165246188}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
+    - target: {fileID: 919132149155446097, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
       propertyPath: m_Name
-      value: raccoon
+      value: goat
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
-    - {fileID: 65702495048144492, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
+    - {fileID: 65702495048144492, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
---- !u!4 &1480894510038897235 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
+--- !u!4 &6035976588212970070 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8c156a8bf56b23d40aa2e464589bf379, type: 3}
-  m_PrefabInstance: {fileID: 1371215006448530872}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d69b20f578e83f344941f085f556e9bc, type: 3}
+  m_PrefabInstance: {fileID: 6074970825113421245}
   m_PrefabAsset: {fileID: 0}

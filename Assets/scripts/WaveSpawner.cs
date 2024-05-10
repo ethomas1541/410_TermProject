@@ -5,6 +5,7 @@ https://www.youtube.com/watch?v=q0SBfDFn2Bs&t=607s (part 2)
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WaveSpawner : MonoBehaviour
 {
