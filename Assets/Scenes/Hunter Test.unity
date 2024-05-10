@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05ab208ac54e464aa477c7fecf19b1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoodAmount: 50
+  WoodAmount: 300
   WoodHUD: {fileID: 1544357502}
 --- !u!114 &1544357502 stripped
 MonoBehaviour:
@@ -630,6 +630,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 101795369973061483, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: currentHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 101795369973061483, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 255648409423899601, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
     - target: {fileID: 459055495486279899, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -646,6 +658,42 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 503013974770891344, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 713714788561597647, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: currentHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 713714788561597647, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 747587322917314753, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 777816354582837183, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: currentHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 777816354582837183, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 881552336411299727, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: currentHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 881552336411299727, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365775363243891446, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
     - target: {fileID: 1427331887561461755, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -662,6 +710,50 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1498811094821234614, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766330416558905905, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898249138765447168, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: currentHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898249138765447168, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049310261270041010, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847143225305934345, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897974730529495822, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: currentHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897974730529495822, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128310047647533551, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: currentHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128310047647533551, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3138372621640870968, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
     - target: {fileID: 3377715086041395657, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -677,6 +769,46 @@ PrefabInstance:
     - target: {fileID: 3377715086041395657, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476139051797006434, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: currentHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476139051797006434, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3890522243240945413, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: currentHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3890522243240945413, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895584066062050765, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645625615961512692, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: currentHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645625615961512692, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867476275385711848, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427505809369656751, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: currentHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427505809369656751, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5481707191803918714, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -726,6 +858,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6310306454126169872, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6366684051364419274, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -741,6 +877,10 @@ PrefabInstance:
     - target: {fileID: 6366684051364419274, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420799569682241376, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
       objectReference: {fileID: 0}
     - target: {fileID: 6760047539869964670, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: Player
@@ -781,6 +921,30 @@ PrefabInstance:
     - target: {fileID: 7038389454391481043, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7829410186532627106, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239759147753318236, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: currentHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239759147753318236, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8401350813969805127, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563404077669671242, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085767891143325997, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 9201635243734732745, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_Name

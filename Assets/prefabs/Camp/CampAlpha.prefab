@@ -50,6 +50,7 @@ MonoBehaviour:
   HPcontroller: {fileID: 3205873852933900923}
   lvlCost: 50
   Walls: {fileID: 7829410186532627106}
+  WallsCost: 120
   Babe: {fileID: 5512225062852489200}
 --- !u!1 &62237289840750860
 GameObject:
@@ -281,9 +282,10 @@ GameObject:
   - component: {fileID: 255648409425835281}
   - component: {fileID: 5316418797110886753}
   - component: {fileID: 101795369973061483}
+  - component: {fileID: 4182239285138958568}
   m_Layer: 0
   m_Name: wallpiece (1)
-  m_TagString: Untagged
+  m_TagString: Camp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -387,8 +389,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 25
-  currentHealth: 25
+  initialHealth: 40
+  currentHealth: 40
+--- !u!114 &4182239285138958568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255648409423899601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2272fefeb7efb4abca15b34fd90e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeCTRL: {fileID: 6760047539869964670}
 --- !u!1 &503013974770891344
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,9 +629,10 @@ GameObject:
   - component: {fileID: 747587322919321089}
   - component: {fileID: 4617454951206586993}
   - component: {fileID: 3128310047647533551}
+  - component: {fileID: 1316736839033124526}
   m_Layer: 0
   m_Name: wallpiece (1)
-  m_TagString: Untagged
+  m_TagString: Camp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -720,8 +736,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 25
-  currentHealth: 25
+  initialHealth: 40
+  currentHealth: 40
+--- !u!114 &1316736839033124526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747587322917314753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2272fefeb7efb4abca15b34fd90e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeCTRL: {fileID: 6760047539869964670}
 --- !u!1 &1137869489631786001
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,9 +898,10 @@ GameObject:
   - component: {fileID: 1365775363241886774}
   - component: {fileID: 6395037877293166662}
   - component: {fileID: 881552336411299727}
+  - component: {fileID: 4530684175453645999}
   m_Layer: 0
   m_Name: wallpiece (1)
-  m_TagString: Untagged
+  m_TagString: Camp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -975,8 +1005,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 25
-  currentHealth: 25
+  initialHealth: 40
+  currentHealth: 40
+--- !u!114 &4530684175453645999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365775363243891446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2272fefeb7efb4abca15b34fd90e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeCTRL: {fileID: 6760047539869964670}
 --- !u!1 &1386323613580622601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,9 +1275,10 @@ GameObject:
   - component: {fileID: 1766330416556705009}
   - component: {fileID: 5965242290475495553}
   - component: {fileID: 713714788561597647}
+  - component: {fileID: 286344147468272299}
   m_Layer: 0
   m_Name: wallpiece
-  m_TagString: Untagged
+  m_TagString: Camp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1338,8 +1382,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 25
-  currentHealth: 25
+  initialHealth: 40
+  currentHealth: 40
+--- !u!114 &286344147468272299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766330416558905905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2272fefeb7efb4abca15b34fd90e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeCTRL: {fileID: 6760047539869964670}
 --- !u!1 &1996106519152035578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,9 +1543,10 @@ GameObject:
   - component: {fileID: 2049310261272301426}
   - component: {fileID: 6213582886789692162}
   - component: {fileID: 4645625615961512692}
+  - component: {fileID: 8447699647164084745}
   m_Layer: 0
   m_Name: wallpiece
-  m_TagString: Untagged
+  m_TagString: Camp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1592,8 +1650,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 25
-  currentHealth: 25
+  initialHealth: 40
+  currentHealth: 40
+--- !u!114 &8447699647164084745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049310261270041010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2272fefeb7efb4abca15b34fd90e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeCTRL: {fileID: 6760047539869964670}
 --- !u!1 &2434288590207713921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1823,9 +1894,10 @@ GameObject:
   - component: {fileID: 2847143225308198089}
   - component: {fileID: 7910746229827354809}
   - component: {fileID: 5427505809369656751}
+  - component: {fileID: 398640521135435315}
   m_Layer: 0
   m_Name: wallpiece
-  m_TagString: Untagged
+  m_TagString: Camp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1929,8 +2001,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 25
-  currentHealth: 25
+  initialHealth: 40
+  currentHealth: 40
+--- !u!114 &398640521135435315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2847143225305934345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2272fefeb7efb4abca15b34fd90e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeCTRL: {fileID: 6760047539869964670}
 --- !u!1 &3078482296606311983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,9 +2163,10 @@ GameObject:
   - component: {fileID: 3138372621638677240}
   - component: {fileID: 7045377079791896200}
   - component: {fileID: 3476139051797006434}
+  - component: {fileID: 735988980235835236}
   m_Layer: 0
   m_Name: wallpiece
-  m_TagString: Untagged
+  m_TagString: Camp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2184,8 +2270,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 25
-  currentHealth: 25
+  initialHealth: 40
+  currentHealth: 40
+--- !u!114 &735988980235835236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3138372621640870968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2272fefeb7efb4abca15b34fd90e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeCTRL: {fileID: 6760047539869964670}
 --- !u!1 &3535904869114619666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,9 +2479,10 @@ GameObject:
   - component: {fileID: 3895584066064251661}
   - component: {fileID: 8954402305216024445}
   - component: {fileID: 3890522243240945413}
+  - component: {fileID: 6412432089707432349}
   m_Layer: 0
   m_Name: wallpiece
-  m_TagString: Untagged
+  m_TagString: Camp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2486,8 +2586,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 25
-  currentHealth: 25
+  initialHealth: 40
+  currentHealth: 40
+--- !u!114 &6412432089707432349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3895584066062050765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2272fefeb7efb4abca15b34fd90e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeCTRL: {fileID: 6760047539869964670}
 --- !u!1 &3964485146198567371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2956,9 +3069,10 @@ GameObject:
   - component: {fileID: 4867476275387900456}
   - component: {fileID: 704592923611256408}
   - component: {fileID: 8239759147753318236}
+  - component: {fileID: 1327697964245577565}
   m_Layer: 0
   m_Name: wallpiece (1)
-  m_TagString: Untagged
+  m_TagString: Camp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3062,8 +3176,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 25
-  currentHealth: 25
+  initialHealth: 40
+  currentHealth: 40
+--- !u!114 &1327697964245577565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4867476275385711848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2272fefeb7efb4abca15b34fd90e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeCTRL: {fileID: 6760047539869964670}
 --- !u!1 &4879145565858300308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4186,9 +4313,10 @@ GameObject:
   - component: {fileID: 6420799569680304544}
   - component: {fileID: 1391835852216204752}
   - component: {fileID: 2897974730529495822}
+  - component: {fileID: 9078163368268230809}
   m_Layer: 0
   m_Name: wallpiece
-  m_TagString: Untagged
+  m_TagString: Camp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4292,8 +4420,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 25
-  currentHealth: 25
+  initialHealth: 40
+  currentHealth: 40
+--- !u!114 &9078163368268230809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420799569682241376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2272fefeb7efb4abca15b34fd90e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeCTRL: {fileID: 6760047539869964670}
 --- !u!1 &6773246664082769676
 GameObject:
   m_ObjectHideFlags: 0
@@ -4765,9 +4906,10 @@ GameObject:
   - component: {fileID: 8401350813971739015}
   - component: {fileID: 4529513365499807223}
   - component: {fileID: 1898249138765447168}
+  - component: {fileID: 3562021734665972457}
   m_Layer: 0
   m_Name: wallpiece
-  m_TagString: Untagged
+  m_TagString: Camp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4871,8 +5013,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 25
-  currentHealth: 25
+  initialHealth: 40
+  currentHealth: 40
+--- !u!114 &3562021734665972457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8401350813969805127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2272fefeb7efb4abca15b34fd90e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeCTRL: {fileID: 6760047539869964670}
 --- !u!1 &8563404077669671242
 GameObject:
   m_ObjectHideFlags: 0
@@ -4886,9 +5041,10 @@ GameObject:
   - component: {fileID: 8563404077667680138}
   - component: {fileID: 4367606284824480762}
   - component: {fileID: 777816354582837183}
+  - component: {fileID: 4763149984381437908}
   m_Layer: 0
   m_Name: wallpiece
-  m_TagString: Untagged
+  m_TagString: Camp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4992,8 +5148,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 25
-  currentHealth: 25
+  initialHealth: 40
+  currentHealth: 40
+--- !u!114 &4763149984381437908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8563404077669671242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2272fefeb7efb4abca15b34fd90e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeCTRL: {fileID: 6760047539869964670}
 --- !u!1 &8636884286135498317
 GameObject:
   m_ObjectHideFlags: 0

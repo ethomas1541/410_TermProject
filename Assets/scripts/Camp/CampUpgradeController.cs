@@ -18,6 +18,7 @@ public class CampUpgradeController : MonoBehaviour
 
     // the walls
     public GameObject Walls;
+    public int WallsCost = 120;
 
     // Babe the Blue Bull
     public GameObject Babe;
@@ -68,11 +69,12 @@ public class CampUpgradeController : MonoBehaviour
 
     public void Buildwall()
     {
-        if (Wallet.WoodAmount >= 120)
+        if (Wallet.WoodAmount >= WallsCost)
         {
-            Wallet.SpendWood(120);
-            Walls.SetActive(false);
-            Walls.SetActive(true);
+            Wallet.SpendWood(WallsCost);
+            SetActiveRecursively(Walls, false);
+            SetActiveRecursively(Walls, true);
+            WallsCost = 0;
         }
     }
 
@@ -91,5 +93,15 @@ public class CampUpgradeController : MonoBehaviour
     {
         upgradeMenu.SetActive(false);
         UpgradePrompt.SetActive(true);
+    }
+
+    public static void SetActiveRecursively(GameObject obj, bool active)
+    {
+        obj.SetActive(active);
+
+        foreach (Transform child in obj.transform)
+        {
+            SetActiveRecursively(child.gameObject, active);
+        }
     }
 }
