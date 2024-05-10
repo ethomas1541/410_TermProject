@@ -391,6 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthController: {fileID: 7522254260113536493}
   slider: {fileID: 5275405902415132461}
+  camera: {fileID: 0}
 --- !u!1 &4924589616176690450
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +600,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20.332869, y: -1.297, z: -10.022}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7138769852165246188}

@@ -6,7 +6,7 @@ public class HPBar : MonoBehaviour
 {
     public HealthController healthController;
     public Slider slider;
-    private new Camera camera;
+    public new Camera camera;
 
     void Start() {
 
