@@ -105,26 +105,7 @@ public class PlayerController : MonoBehaviour
         // Check if the attack button was pressed
         if (context.performed)
         {
-            StartCoroutine(PerformAttack());
+            animator.SetTrigger("Attack");
         }
-    }
-
-    private IEnumerator PerformAttack()
-    {
-        WeaponController currentWeapon = weaponInventory.GetCurrentWeapon();
-
-        animator.SetTrigger("Attack");
-
-        // Wait for the current transition to end
-        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f );
-
-        // Begin the attack
-        currentWeapon.StartAttack();
-
-        // Wait for the attack animation to end
-        yield return new WaitWhile(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f);
-
-        // End the attack
-        currentWeapon.EndAttack();
     }
 }

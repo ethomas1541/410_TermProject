@@ -9,6 +9,11 @@ public class TreeController : MonoBehaviour
     HealthController healthController;
     Animator animator;
 
+    // let the tree access the players inventory
+    public int WoodValue = 10;
+    //public GameObject Player;
+    public WoodInventory Wallet;
+
     void Awake() {
         healthController = GetComponent<HealthController>();
         animator = GetComponentInChildren<Animator>();
@@ -30,7 +35,7 @@ public class TreeController : MonoBehaviour
 
         // Wait for the death animation to end
         yield return new WaitWhile(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f);
-
+        Wallet.AddWood(WoodValue);
         transform.gameObject.SetActive(false);
     }
 }
