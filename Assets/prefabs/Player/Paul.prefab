@@ -736,7 +736,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b98ee6465d96834eb211c714fe8a50f, type: 2}
+  - {fileID: 2100000, guid: f3766b8cede8a314fbb437bd1b1062a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1240,6 +1240,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 93ddceb8-93a1-4ac9-bf3c-66ef54d3300a
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8223094783891609760}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnSprint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c15a43ee-f603-4daf-ae0b-572c17010b76
+    m_ActionName: Player/Sprint[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -1272,6 +1288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  sprintFactor: 1.5
   jumpHeight: 2.5
   groundedDistance: 0.5
 --- !u!114 &5349631958813425344
@@ -1638,7 +1655,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b98ee6465d96834eb211c714fe8a50f, type: 2}
+  - {fileID: 2100000, guid: f3766b8cede8a314fbb437bd1b1062a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1900,7 +1917,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b98ee6465d96834eb211c714fe8a50f, type: 2}
+  - {fileID: 2100000, guid: f3766b8cede8a314fbb437bd1b1062a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2047,7 +2064,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b98ee6465d96834eb211c714fe8a50f, type: 2}
+  - {fileID: 2100000, guid: f3766b8cede8a314fbb437bd1b1062a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2427,7 +2444,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b98ee6465d96834eb211c714fe8a50f, type: 2}
+  - {fileID: 2100000, guid: f3766b8cede8a314fbb437bd1b1062a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2874,8 +2891,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 2.216753, y: 1.4348123, z: 2.1038404}
-  m_Center: {x: -0.06812048, y: 1.0436217, z: 0.95131236}
+  m_Size: {x: 2.216753, y: 1.4348123, z: 2.666935}
+  m_Center: {x: -0.06812048, y: 1.0436207, z: 0.66976506}
 --- !u!114 &2385330245081812169
 MonoBehaviour:
   m_ObjectHideFlags: 0
