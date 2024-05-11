@@ -5841,6 +5841,7 @@ MonoBehaviour:
   Camp: {fileID: 36247676}
   mainCamera: {fileID: 250104290}
   UpgCtrl: {fileID: 711868255}
+  SpawnPoints: []
 --- !u!1 &2039324520
 GameObject:
   m_ObjectHideFlags: 0
