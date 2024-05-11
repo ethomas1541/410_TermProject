@@ -115,9 +115,11 @@ public class CampUpgradeController : MonoBehaviour
 
     public void ExitMenu()
     {
-        upgradeMenu.SetActive(false);
-        //UpgradePrompt.SetActive(true);
-        OnExitMenu?.Invoke();
+        if(upgradeMenu.activeSelf)
+        {
+            upgradeMenu.SetActive(false);
+            OnExitMenu?.Invoke();
+        }
     }
 
     public static void SetActiveRecursively(GameObject obj, bool active)

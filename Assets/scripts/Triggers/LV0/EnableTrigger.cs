@@ -17,5 +17,7 @@ public class EnableTrigger : MonoBehaviour
                 t.SetActive(true);
             }
         }
+        // script should trigger once
+        Destroy(gameObject);
     }
 }
