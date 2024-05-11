@@ -11,9 +11,11 @@ public class EnemyController : MonoBehaviour
     public float speed = 5.0f;
     public float attackSpeed = 0.5f;
     public float attackRadius = 1.0f;
+    public AudioClip attackClip, takeDamageClip, dieClip;
 
     NavMeshAgent agent;
     Animator animator;
+    AudioSource audioSource;
     HealthController healthController;
     DamageTrigger damageTrigger;
 
@@ -30,10 +32,14 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         healthController = GetComponent<HealthController>();
         animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
         damageTrigger = GetComponentInChildren<DamageTrigger>();
 
         // Subscribe to the on death method
         healthController.OnDeath += OnDie;
+
+        // Subscribe to the on take damage method
+        healthController.OnTakeDamage += TakeDamage;
 
         agent.speed = speed;
 
@@ -68,6 +74,9 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("Approaching", false);
         animator.SetTrigger("Die");
 
+        audioSource.clip = dieClip;
+        audioSource.Play();
+
         // Wait for the current transition to end
         yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f );
 
@@ -84,6 +93,11 @@ public class EnemyController : MonoBehaviour
         transform.rotation = rotation;
     }
 
+    public void TakeDamage() {
+        audioSource.clip = takeDamageClip;
+        audioSource.Play();
+    }
+
     void ApproachTarget()
     {
         animator.SetBool("Approaching", true);
@@ -92,6 +106,9 @@ public class EnemyController : MonoBehaviour
 
     void AttackTarget()
     {
+        audioSource.clip = attackClip;
+        audioSource.Play();
+
         animator.SetBool("Approaching", false);
 
         FaceTarget();
