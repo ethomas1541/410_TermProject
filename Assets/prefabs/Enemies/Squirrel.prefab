@@ -180,6 +180,8 @@ MonoBehaviour:
   tagDamages:
   - tag: Player
     damage: 2
+  - tag: Camp
+    damage: 4
 --- !u!1 &3444939069134629597
 GameObject:
   m_ObjectHideFlags: 0
