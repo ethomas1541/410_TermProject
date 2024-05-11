@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2383,6 +2383,114 @@ PrefabInstance:
     - target: {fileID: 3004822294303122168, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774073114954285344, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577193916666039442, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[3].name
+      value: third
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[4].name
+      value: third
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[5].name
+      value: third
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[6].name
+      value: third
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[7].name
+      value: third
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[0].enemy
+      value: 
+      objectReference: {fileID: 1522638264653738625, guid: ac8b865205952b74e87ab01a0c0b0114, type: 3}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[1].enemy
+      value: 
+      objectReference: {fileID: 6604477065953171176, guid: 108f776bffc53034ab67a20d0c0bf74e, type: 3}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[2].enemy
+      value: 
+      objectReference: {fileID: 6604477065953171176, guid: 0e0787d8c62e673459a9ebf0fd54bf6a, type: 3}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[3].count
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[3].enemy
+      value: 
+      objectReference: {fileID: 6604477065953171176, guid: ee13801965f083047b136c52f29ac6fc, type: 3}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[4].count
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[4].enemy
+      value: 
+      objectReference: {fileID: 6604477065953171176, guid: ec0e372681a780d4ab7f3046aefb280a, type: 3}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[5].count
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[5].enemy
+      value: 
+      objectReference: {fileID: 6604477065953171176, guid: 0c0a0f3b3183b534894c48d6475f9cba, type: 3}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[6].count
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[6].enemy
+      value: 
+      objectReference: {fileID: 6604477065953171176, guid: 23c778456eda38e408625f47062b3746, type: 3}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[7].count
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[7].enemy
+      value: 
+      objectReference: {fileID: 4450633077077062264, guid: afb93677256f09044be09fe2beb7070e, type: 3}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[3].spawn_rate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[4].spawn_rate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[5].spawn_rate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[6].spawn_rate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863313733082976628, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: waves.Array.data[7].spawn_rate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7180291094823203785, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7724175308807815978, guid: c4ae645df92cd0c429f149a14f1a0cde, type: 3}
       propertyPath: m_Name
