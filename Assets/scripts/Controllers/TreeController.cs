@@ -56,12 +56,13 @@ public class TreeController : MonoBehaviour
     IEnumerator Respawn()
     {
         // This will play before it is active
-        animator.SetTrigger("Stand");
+        // this was giving a warning and seemed to not effect execution, commenting out and revisiting later - hunter
+        //animator.SetTrigger("Stand");
 
-        //80 is final value for now
-        //yield return new WaitForSeconds(80f);
-
-        yield return new WaitForSeconds(5f);
+        
+        yield return new WaitForSeconds(80f);
+        // 4 testing reasons
+        //yield return new WaitForSeconds(5f);
 
         Stump.SetActive(false);
 
