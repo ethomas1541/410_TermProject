@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 direction;
     private float jumpVelocity;
     private float sprintMultiplier;
+    private Inventory inventory; 
 
     void Start()
     {
@@ -34,6 +35,8 @@ public class PlayerController : MonoBehaviour
         jumpVelocity = Mathf.Sqrt(2 * jumpHeight * Mathf.Abs(Physics.gravity.y));
 
         sprintMultiplier = 1;
+
+        inventory = new Inventory();
     }
 
     void FixedUpdate()

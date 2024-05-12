@@ -13,7 +13,6 @@ public class Item
     {
         Axe,
         Wood,
-        Apple,
     }
 
     public ItemType itemType;
