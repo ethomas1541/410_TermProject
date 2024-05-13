@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Tree
   - Camp
+  - CampWall
   layers:
   - Default
   - TransparentFX
