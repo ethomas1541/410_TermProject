@@ -42,6 +42,11 @@ public class PlayerController : MonoBehaviour
 
         // passing inventory object to UI script
         uiInventory.SetInventory(inventory);
+
+        // test spawn items 
+        Debug.Log(Item.ItemType.Wood);
+        ItemWorld.SpawnItemWorld(new Vector3((float)-2.52999997,(float)0.5, (float)-6.36000013), new Item { itemType = Item.ItemType.Wood, amount = 1 });
+        ItemWorld.SpawnItemWorld(new Vector3((float)-7.52999997,(float)0.5, (float)-6.36000013), new Item { itemType = Item.ItemType.Wood, amount = 1 });
     }
 
     void FixedUpdate()

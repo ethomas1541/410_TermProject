@@ -36,8 +36,8 @@ public class UI_Inventory : MonoBehaviour
 
         foreach (Item item in inventory.GetItemList())
         {
-            Debug.Log(ItemSlotContainerTemplate);
-            Debug.Log(ItemSlotContainer);
+            // Debug.Log(ItemSlotContainerTemplate);
+            // Debug.Log(ItemSlotContainer);
             RectTransform itemSlotRectTransform = Instantiate(ItemSlotContainerTemplate, ItemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
