@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 2;
     public float groundedDistance = 0.5f;
 
+    [SerializeField] private UI_Inventory uiInventory;
+
     private Rigidbody rb;
     private Animator animator;
     private HealthController healthController;
@@ -37,6 +39,9 @@ public class PlayerController : MonoBehaviour
         sprintMultiplier = 1;
 
         inventory = new Inventory();
+
+        // passing inventory object to UI script
+        uiInventory.SetInventory(inventory);
     }
 
     void FixedUpdate()
