@@ -6780,6 +6780,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 922059844}
+    - target: {fileID: 3036851119060545210, guid: 23c778456eda38e408625f47062b3746, type: 3}
+      propertyPath: WaveCtrl
+      value: 
+      objectReference: {fileID: 2016064960}
     - target: {fileID: 6398529275918465791, guid: 23c778456eda38e408625f47062b3746, type: 3}
       propertyPath: m_Name
       value: Squirrel
@@ -7675,6 +7679,7 @@ MonoBehaviour:
   UpgCtrl: {fileID: 711868255}
   SpawnPoints: []
   WinMenu: {fileID: 1419625545}
+  Enemies_Slain: 0
 --- !u!1001 &2024796704
 PrefabInstance:
   m_ObjectHideFlags: 0
