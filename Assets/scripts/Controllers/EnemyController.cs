@@ -21,6 +21,10 @@ public class EnemyController : MonoBehaviour
 
     bool alreadyAttacked;
 
+    // added to track number of enemies killed in mock wave - hunter
+    // probably a beter way to do this; rework after alpha
+    public MockWave WaveCtrl;
+
 
     public void Initialize(Transform t)
     {
@@ -76,6 +80,9 @@ public class EnemyController : MonoBehaviour
 
         audioSource.clip = dieClip;
         audioSource.Play();
+
+        // probably rework this eventually, this is for the alphademp:
+        WaveCtrl.Enemykilled();
 
         // Wait for the current transition to end
         yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f );

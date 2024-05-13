@@ -17,10 +17,15 @@ public class MockWave : MonoBehaviour
     public Camera mainCamera;
     // needed for camp upgrade observer invokcation
     public CampUpgradeController UpgCtrl;
-
     public Vector3[] SpawnPoints;
+    private bool isActive = true;
+
+    // Win condition tracker
+    public GameObject WinMenu;
+    public int Enemies_Slain = 0;
 
     void Awake() {
+        WinMenu.SetActive(false);
         UpgCtrl.OnExitMenu += OnMenuClose;
         SpawnPoints = new Vector3[]
         {
@@ -34,7 +39,11 @@ public class MockWave : MonoBehaviour
 
     void OnMenuClose()
     {
-        StartCoroutine(MyCoroutine());
+        if(isActive)
+        {
+            StartCoroutine(MyCoroutine());
+            isActive = false;
+        }
     }
 
     IEnumerator MyCoroutine()
@@ -44,6 +53,7 @@ public class MockWave : MonoBehaviour
                 GameObject Enemy = Instantiate(E1, SpawnPoints[i], Quaternion.identity);
                 EnemyController EC = Enemy.GetComponent<EnemyController>();
                 HPBar ECam = Enemy.GetComponentInChildren<HPBar>();
+                EC.WaveCtrl = this;
                 EC.Initialize(player);
                 ECam.camera = mainCamera;
                 yield return new WaitForSeconds(.3f);
@@ -56,12 +66,21 @@ public class MockWave : MonoBehaviour
                 GameObject Enemy = Instantiate(E1, SpawnPoints[i], Quaternion.identity);
                 EnemyController EC = Enemy.GetComponent<EnemyController>();
                 HPBar ECam = Enemy.GetComponentInChildren<HPBar>();
+                EC.WaveCtrl = this;
                 EC.Initialize(Camp);
                 ECam.camera = mainCamera;
                 yield return new WaitForSeconds(.3f);
             }
+    }
 
-            // script should trigger once
-            Destroy(gameObject);
+    public void Enemykilled()
+    {
+        Enemies_Slain ++;
+        if (Enemies_Slain == 11)
+        {
+            // bring up the win screen
+            Time.timeScale = 0f;
+            WinMenu.SetActive(true);
+        }
     }
 }
