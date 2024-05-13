@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a9ff619612d4e48b974ddddc9f2ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemWorld: {fileID: 5670851139557833060, guid: 0d14a7a488bd2fe409819250d6270d71, type: 3}
   AxeSprite: {fileID: 21300000, guid: 8b7364f9665cf14498f4f6b7f4e1ea18, type: 3}
   WoodSprite: {fileID: 21300000, guid: 8fd4dac6140b41f468e19d940ec2c951, type: 3}
