@@ -81,7 +81,7 @@ public class EnemyController : MonoBehaviour
         audioSource.clip = dieClip;
         audioSource.Play();
 
-        // probably rework this eventually, this is for the alphademp:
+        // probably rework this eventually, this is for the alphademo:
         WaveCtrl.Enemykilled();
 
         // Wait for the current transition to end
@@ -90,7 +90,7 @@ public class EnemyController : MonoBehaviour
         // Wait for the death animation to end
         yield return new WaitWhile(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f);
 
-        transform.gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     void FaceTarget() {

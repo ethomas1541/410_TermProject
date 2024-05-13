@@ -23,6 +23,7 @@ public class MockWave : MonoBehaviour
     // Win condition tracker
     public GameObject WinMenu;
     public int Enemies_Slain = 0;
+    public int WinAmount = 11;
 
     void Awake() {
         WinMenu.SetActive(false);
@@ -76,7 +77,7 @@ public class MockWave : MonoBehaviour
     public void Enemykilled()
     {
         Enemies_Slain ++;
-        if (Enemies_Slain == 11)
+        if (Enemies_Slain == WinAmount)
         {
             // bring up the win screen
             Time.timeScale = 0f;

@@ -644,6 +644,10 @@ MonoBehaviour:
   speed: 3.5
   attackSpeed: 1
   attackRadius: 4
+  attackClip: {fileID: 0}
+  takeDamageClip: {fileID: 0}
+  dieClip: {fileID: 0}
+  WaveCtrl: {fileID: 0}
 --- !u!54 &6343697814595980723
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -683,8 +687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 100
-  currentHealth: 100
+  initialHealth: 75
+  currentHealth: 75
 --- !u!65 &6271189863215883634
 BoxCollider:
   m_ObjectHideFlags: 0
