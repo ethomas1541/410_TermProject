@@ -117,12 +117,12 @@ public class CampUpgradeController : MonoBehaviour
     {
         if(upgradeMenu.activeSelf)
         {
-            upgradeMenu.SetActive(false);
+            SetActiveRecursively(upgradeMenu, false);
             OnExitMenu?.Invoke();
         }
     }
 
-    public static void SetActiveRecursively(GameObject obj, bool active)
+    public void SetActiveRecursively(GameObject obj, bool active)
     {
         obj.SetActive(active);
 

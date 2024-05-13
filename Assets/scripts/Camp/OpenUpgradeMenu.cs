@@ -24,7 +24,7 @@ public class OpenUpgradeMenu : MonoBehaviour
         if (isPlayerNearby && Input.GetKeyDown(openMenuKey))
         {
             // Open the upgrade menu when the player is nearby and presses the key
-            upgradeMenu.SetActive(true);
+            UpgCtrl.SetActiveRecursively(upgradeMenu, true);
             UpgradePrompt.SetActive(false);
         }
     } 
