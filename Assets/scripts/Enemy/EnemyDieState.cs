@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class EnemyDieState : EnemyState
     public override void EnterState()
     {
         enemy.audioSource.clip = enemy.deathAudio;
+        enemy.audioSource.Play();
         enemy.gfxAnimator.Play("dead");
     }
 
@@ -26,7 +28,7 @@ public class EnemyDieState : EnemyState
         if (type == EnemyAnimationListener.Type.EndDie) {
 
             if (enemy.waveSpawner != null) { enemy.waveSpawner.Enemykilled(); }
-            enemy.gameObject.SetActive(false);
+            Object.Destroy(enemy.gameObject, enemy.deathAudio.length);
         }
     }
 }

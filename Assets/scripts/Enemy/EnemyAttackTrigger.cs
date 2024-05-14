@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(SphereCollider))]
 public class EnemyAttackTrigger : MonoBehaviour
 {
     public Enemy enemy;

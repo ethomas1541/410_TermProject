@@ -1,3 +1,6 @@
+using System.Collections;
+using UnityEngine;
+
 public class EnemyState {
     protected Enemy enemy;
     protected EnemyStateMachine stateMachine;
