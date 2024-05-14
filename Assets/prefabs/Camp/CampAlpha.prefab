@@ -47,7 +47,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 8113311608650518400}
   UpgradePrompt: {fileID: 5509300431997063822}
   Wallet: {fileID: 0}
-  HPcontroller: {fileID: 3205873852933900923}
+  HPcontroller: {fileID: 0}
   lvlCost: 50
   dmgTaken: 0
   RepairCost: 0
@@ -3316,7 +3316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e87ae5bcb4c71746822eb8eeca548d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthController: {fileID: 3205873852933900923}
+  healthController: {fileID: 6325832387816737767}
   slider: {fileID: 7423082659145518915}
 --- !u!1 &4049454383550773412
 GameObject:
@@ -4784,7 +4784,8 @@ GameObject:
   - component: {fileID: 5181001598609338405}
   - component: {fileID: 3369972294352237398}
   - component: {fileID: 1169924574954533897}
-  - component: {fileID: 6538011585156786599}
+  - component: {fileID: 7463789555004746934}
+  - component: {fileID: 6325832387816737767}
   m_Layer: 0
   m_Name: tent
   m_TagString: Camp
@@ -4857,8 +4858,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6538011585156786599
-MeshCollider:
+--- !u!65 &7463789555004746934
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4875,10 +4876,23 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6705128238138053353, guid: 6724caf277831854fa8c7e4bcd500aa1, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 2.4998744, y: 2.0492811, z: 3.0293145}
+  m_Center: {x: 0, y: 1.0244613, z: 0.015385091}
+--- !u!114 &6325832387816737767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6305048882141616461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 100
+  currentHealth: 100
 --- !u!1 &6310306454126169872
 GameObject:
   m_ObjectHideFlags: 0
@@ -6256,12 +6270,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5481707191803918714}
-  - component: {fileID: 2540699214292048799}
   - component: {fileID: 4560316157043435288}
-  - component: {fileID: 3205873852933900923}
   - component: {fileID: 8065516555040678551}
   m_Layer: 0
-  m_Name: campAlpha
+  m_Name: CampAlpha
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6288,27 +6300,6 @@ Transform:
   - {fileID: 830258235404605758}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2540699214292048799
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9201635243734732745}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.8, y: 10, z: 4}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4560316157043435288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6321,22 +6312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f71743986da1e4ca774a202d8ea277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthController: {fileID: 3205873852933900923}
+  healthController: {fileID: 6325832387816737767}
   CampUpgader: {fileID: 6760047539869964670}
---- !u!114 &3205873852933900923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9201635243734732745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 100
-  currentHealth: 100
 --- !u!54 &8065516555040678551
 Rigidbody:
   m_ObjectHideFlags: 0
