@@ -9,10 +9,10 @@ public class MockWave : MonoBehaviour
 {
     // represents an enemy prefab
     public GameObject E1;
-    // holds player model, not whole prefab
-    public Transform player;
-    // holds camp model, not prefab as whole/    
-    public Transform Camp;
+
+    public string playerTag;
+    public Transform campTag;
+
     // holds main cam, in player prefab
     public Camera mainCamera;
     // needed for camp upgrade observer invokcation
@@ -52,10 +52,10 @@ public class MockWave : MonoBehaviour
             for (int i = 0; i < 5; i++)
             {
                 GameObject Enemy = Instantiate(E1, SpawnPoints[i], Quaternion.identity);
-                EnemyController EC = Enemy.GetComponent<EnemyController>();
+                Enemy EC = Enemy.GetComponent<Enemy>();
                 HPBar ECam = Enemy.GetComponentInChildren<HPBar>();
-                EC.WaveCtrl = this;
-                EC.Initialize(player);
+                EC.SetWaveSpawner(this);
+                EC.SetTarget("Player");
                 ECam.camera = mainCamera;
                 yield return new WaitForSeconds(.3f);
             }
@@ -65,10 +65,10 @@ public class MockWave : MonoBehaviour
             for (int i = 0; i < 5; i++)
             {
                 GameObject Enemy = Instantiate(E1, SpawnPoints[i], Quaternion.identity);
-                EnemyController EC = Enemy.GetComponent<EnemyController>();
+                Enemy EC = Enemy.GetComponent<Enemy>();
                 HPBar ECam = Enemy.GetComponentInChildren<HPBar>();
-                EC.WaveCtrl = this;
-                EC.Initialize(Camp);
+                EC.SetWaveSpawner(this);
+                EC.SetTarget("Camp");
                 ECam.camera = mainCamera;
                 yield return new WaitForSeconds(.3f);
             }

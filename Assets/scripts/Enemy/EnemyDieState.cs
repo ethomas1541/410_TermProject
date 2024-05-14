@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyDieState : EnemyState
@@ -22,6 +23,10 @@ public class EnemyDieState : EnemyState
 
     public override void AnimationTriggerEvent(EnemyAnimationListener.Type type)
     {
-        if (type == EnemyAnimationListener.Type.EndDie) { enemy.gameObject.SetActive(false); }
+        if (type == EnemyAnimationListener.Type.EndDie) {
+
+            if (enemy.waveSpawner != null) { enemy.waveSpawner.Enemykilled(); }
+            enemy.gameObject.SetActive(false);
+        }
     }
 }

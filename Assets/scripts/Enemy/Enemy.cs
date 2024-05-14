@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
     public Animator gfxAnimator;
     public SphereCollider attackTriggerCollider;
     public Transform target;
+    public MockWave waveSpawner;
 
     #region state machine variables
     public EnemyStateMachine stateMachine;
@@ -108,6 +109,17 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         stateMachine.CurrentState.PhysicsUpdate();
+    }
+
+    public void SetTarget(string targetTag)
+    {
+        this.targetTag = targetTag;
+        target = GameObject.FindWithTag(targetTag).transform;
+    }
+
+    public void SetWaveSpawner(MockWave waveSpawner)
+    {
+        this.waveSpawner = waveSpawner;
     }
 
     public void AnimationTriggerEvent(EnemyAnimationListener.Type type)
