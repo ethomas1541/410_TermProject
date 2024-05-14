@@ -8,10 +8,7 @@ public class AlphaDemoFightLv1 : MonoBehaviour
     public GameObject E1;
     public GameObject E2;
     public GameObject E3;
-    // holds player model, not whole prefab
-    public Transform player;
-    // holds camp model, not prefab as whole/    
-    public Transform Camp;
+
     // holds main cam, in player prefab
     public Camera mainCamera;
     //hacky solution here
@@ -40,15 +37,15 @@ public class AlphaDemoFightLv1 : MonoBehaviour
     {
         bool x = true;
         while (x == true)
-        {   
+        {
             yield return new WaitForSeconds(15f);
             for (int i = 0; i < 8; i++)
             {
                 GameObject Enemy = Instantiate(E1, SpawnPoints[i], Quaternion.identity);
-                EnemyController EC = Enemy.GetComponent<EnemyController>();
+                Enemy EC = Enemy.GetComponent<Enemy>();
                 HPBar ECam = Enemy.GetComponentInChildren<HPBar>();
-                EC.WaveCtrl = Mwave;
-                EC.Initialize(player);
+                EC.SetWaveSpawner(Mwave);
+                EC.SetTarget("Player");
                 ECam.camera = mainCamera;
                 yield return new WaitForSeconds(.2f);
             }
@@ -58,10 +55,10 @@ public class AlphaDemoFightLv1 : MonoBehaviour
             for (int i = 0; i < 4; i++)
             {
                 GameObject Enemy = Instantiate(E1, SpawnPoints[i], Quaternion.identity);
-                EnemyController EC = Enemy.GetComponent<EnemyController>();
+                Enemy EC = Enemy.GetComponent<Enemy>();
                 HPBar ECam = Enemy.GetComponentInChildren<HPBar>();
-                EC.WaveCtrl = Mwave;
-                EC.Initialize(player);
+                EC.SetWaveSpawner(Mwave);
+                EC.SetTarget("Player");
                 ECam.camera = mainCamera;
                 yield return new WaitForSeconds(.2f);
             }
@@ -71,15 +68,15 @@ public class AlphaDemoFightLv1 : MonoBehaviour
             for (int i = 4; i < 8; i++)
             {
                 GameObject Enemy = Instantiate(E1, SpawnPoints[i], Quaternion.identity);
-                EnemyController EC = Enemy.GetComponent<EnemyController>();
+                Enemy EC = Enemy.GetComponent<Enemy>();
                 HPBar ECam = Enemy.GetComponentInChildren<HPBar>();
-                EC.WaveCtrl = Mwave;
-                EC.Initialize(Camp);
+                EC.SetWaveSpawner(Mwave);
+                EC.SetTarget("Camp");
                 ECam.camera = mainCamera;
                 yield return new WaitForSeconds(.2f);
             }
 
-            
+
 
             yield return new WaitForSeconds(15f);
         }

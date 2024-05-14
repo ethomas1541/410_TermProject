@@ -11,7 +11,7 @@ public class MockWave : MonoBehaviour
     public GameObject E1;
 
     public string playerTag;
-    public Transform campTag;
+    public string campTag;
 
     // holds main cam, in player prefab
     public Camera mainCamera;
