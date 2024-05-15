@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 5510708074094972041}
   - component: {fileID: 7371045971757123013}
   - component: {fileID: 210593396615648196}
+  - component: {fileID: 100515902392572881}
   - component: {fileID: 3071251585227729392}
   - component: {fileID: 736806665066628338}
   - component: {fileID: 4834753337590110769}
@@ -195,6 +196,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!208 &100515902392572881
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388896406874980453}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!82 &3071251585227729392
 AudioSource:
   m_ObjectHideFlags: 0
@@ -330,13 +347,16 @@ MonoBehaviour:
   isAttacking: 0
   isHit: 0
   isDead: 0
+  boxCollider: {fileID: 0}
   rigidBody: {fileID: 0}
   navMeshAgent: {fileID: 0}
+  navMeshObstacle: {fileID: 0}
   audioSource: {fileID: 0}
   healthController: {fileID: 0}
   gfxAnimator: {fileID: 0}
   attackTriggerCollider: {fileID: 0}
   target: {fileID: 0}
+  waveSpawner: {fileID: 0}
 --- !u!1 &1819578204485704621
 GameObject:
   m_ObjectHideFlags: 0

@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 5812045265529763670}
   - component: {fileID: 4974790385091635447}
   - component: {fileID: 8328571823171440657}
+  - component: {fileID: 3161634333168374193}
   - component: {fileID: 6621102178582595330}
   - component: {fileID: 3785881973944373120}
   - component: {fileID: 479237124639572833}
@@ -318,6 +319,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!208 &3161634333168374193
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6398529275918465791}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!82 &6621102178582595330
 AudioSource:
   m_ObjectHideFlags: 0
@@ -444,7 +461,7 @@ MonoBehaviour:
   speed: 2
   attackDamage: 3
   attackCooldown: 2
-  targetTag: Player
+  targetTag: Camp
   approachAudio: {fileID: 0}
   hitAudio: {fileID: 0}
   attackAudio: {fileID: 0}
@@ -453,8 +470,10 @@ MonoBehaviour:
   isAttacking: 0
   isHit: 0
   isDead: 0
+  boxCollider: {fileID: 0}
   rigidBody: {fileID: 0}
   navMeshAgent: {fileID: 0}
+  navMeshObstacle: {fileID: 0}
   audioSource: {fileID: 0}
   healthController: {fileID: 0}
   gfxAnimator: {fileID: 0}
