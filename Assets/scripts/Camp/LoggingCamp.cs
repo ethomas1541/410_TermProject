@@ -12,9 +12,8 @@ public class LoggingCamp : MonoBehaviour
     public HealthController healthController;
     //Animator animator;
     public CampUpgradeController CampUpgader;
-    
-    void Awake() {
-        healthController = GetComponent<HealthController>();
+
+    void Start() {
         //animator = GetComponentInChildren<Animator>();
 
         // Subscribe to the OnDeath event
