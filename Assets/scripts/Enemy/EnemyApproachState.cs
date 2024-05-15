@@ -6,11 +6,17 @@ public class EnemyApproachState : EnemyState
 
     public override void EnterState()
     {
+        enemy.navMeshObstacle.enabled = false;
+        enemy.navMeshAgent.enabled = true;
+
         enemy.gfxAnimator.Play("approach");
     }
 
     public override void ExitState()
     {
+        // Do this disble both then enable one to prevent warnings
+        enemy.navMeshAgent.enabled = false;
+        enemy.navMeshObstacle.enabled = true;
         enemy.isApproaching = false;
     }
 

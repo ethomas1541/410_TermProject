@@ -5,6 +5,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(NavMeshObstacle))]
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(HealthController))]
 public class Enemy : MonoBehaviour
@@ -37,8 +38,10 @@ public class Enemy : MonoBehaviour
     public bool isDead;
 
     [Header("Components for State Machine")]
+    public BoxCollider boxCollider;
     public Rigidbody rigidBody;
     public NavMeshAgent navMeshAgent;
+    public NavMeshObstacle navMeshObstacle;
     public AudioSource audioSource;
     public HealthController healthController;
     public Animator gfxAnimator;
@@ -69,8 +72,10 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         // Get our components
+        boxCollider = GetComponent<BoxCollider>();
         rigidBody = GetComponent<Rigidbody>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshObstacle = GetComponent<NavMeshObstacle>();
         audioSource = GetComponent<AudioSource>();
         healthController = GetComponent<HealthController>();
         gfxAnimator = GetComponentInChildren<Animator>();
@@ -85,9 +90,15 @@ public class Enemy : MonoBehaviour
 
         // Set the nav mesh agent attributes
         navMeshAgent.acceleration = 999;
-        navMeshAgent.angularSpeed = 999;
+        navMeshAgent.angularSpeed = 120;
         navMeshAgent.speed = speed;
         navMeshAgent.stoppingDistance = attackTriggerCollider.radius;
+        navMeshAgent.autoRepath = true;
+
+        // Set the nav mesh obstacle attributes
+        navMeshObstacle.enabled = false;
+        navMeshObstacle.center = boxCollider.center;
+        navMeshObstacle.size = boxCollider.size;
 
         // Set our max health in the health controller
         healthController.initialHealth = maxHealth;
@@ -104,6 +115,12 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         stateMachine.CurrentState.FrameUpdate();
+
+        // Wall has been broken, find a new camp target
+        if (!target.gameObject.activeInHierarchy) {
+            FindNewTarget();
+            stateMachine.ChangeState(idleState);
+        }
     }
 
     void FixedUpdate()
@@ -114,6 +131,10 @@ public class Enemy : MonoBehaviour
     public void SetTarget(string targetTag)
     {
         this.targetTag = targetTag;
+        target = GameObject.FindWithTag(targetTag).transform;
+    }
+
+    private void FindNewTarget() {
         target = GameObject.FindWithTag(targetTag).transform;
     }
 

@@ -14,6 +14,9 @@ public class EnemyAttackTrigger : MonoBehaviour
     {
         if (other.tag == enemy.target.tag)
         {
+            // If the enemy is agro on the camp, but encounter a wall attack the wall instead
+            if (other != enemy.target) { enemy.target = other.transform; }
+
             enemy.isApproaching = false;
             enemy.isAttacking = true;
         }
