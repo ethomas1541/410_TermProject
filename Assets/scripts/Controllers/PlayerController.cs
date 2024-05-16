@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 direction;
     private float jumpVelocity;
     private float sprintMultiplier;
-    private Inventory inventory; 
+    private Inventory inventory;
 
     void Start()
     {
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log(uiInventory);
         uiInventory.SetInventory(inventory);
 
-        // test spawn items 
+        // test spawn items
         Debug.Log(Item.ItemType.Wood);
         ItemWorld.SpawnItemWorld(new Vector3((float)-2.52999997,(float)0.5, (float)-6.36000013), new Item { itemType = Item.ItemType.Wood, amount = 1 });
         ItemWorld.SpawnItemWorld(new Vector3((float)-7.52999997,(float)0.5, (float)-6.36000013), new Item { itemType = Item.ItemType.Wood, amount = 1 });
@@ -98,7 +98,8 @@ public class PlayerController : MonoBehaviour
             if (direction != Vector3.zero)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 4f);
+                // transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 4f);
+                transform.rotation = targetRotation;
             }
         }
     }
