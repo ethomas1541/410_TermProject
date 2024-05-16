@@ -37,7 +37,7 @@ public class TreePhysicsController : MonoBehaviour
     public int WoodValue = 10;
 
     // public GameObject Player;
-    public WoodInventory Wallet;
+    private WoodInventory Wallet;
 
     // stump to replace with when choped down
     public GameObject Stump;
@@ -51,6 +51,7 @@ public class TreePhysicsController : MonoBehaviour
     // Gravity's too slow. When the tree breaks, I make it a litte bit faster.
     private bool fast_falling = false;
     void Awake() {
+        Wallet = GameObject.Find("Paul").GetComponent<WoodInventory>();
         pieces = new List<PieceData>();
 
         treeCollider = GetComponent<BoxCollider>();
