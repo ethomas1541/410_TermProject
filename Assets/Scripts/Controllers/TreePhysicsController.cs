@@ -1,3 +1,11 @@
+// Adapted from Hunter's tree controller script - heavily modified since then.
+
+/* NOTE - EACH SUB-MESH WITHIN THE TREE MODEL NEEDS THE FOLLOWING:
+    -   A RigidBody component, default configuration
+    -   A MeshCollider component, with CONVEX COLLISIONS set to TRUE
+
+*/
+
 // 5/15/24 - adding respawn coroutine - Hunter
 using System.Collections;
 using System.Collections.Generic;
