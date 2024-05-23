@@ -9,6 +9,7 @@ TagManager:
   - Tree
   - Camp
   - CampWall
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
