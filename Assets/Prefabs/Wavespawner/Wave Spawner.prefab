@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8020639898520917811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9201855030785488731}
+  - component: {fileID: 3967634779278034066}
+  m_Layer: 0
+  m_Name: Wave Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9201855030785488731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8020639898520917811}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3967634779278034066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8020639898520917811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22b75130c00cc149bb2d061e72e9a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - enemy: {fileID: 1388896406874980453, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
+    count: 5
+    spawnChance: 0.5
+  - enemy: {fileID: 6398529275918465791, guid: 0c0a0f3b3183b534894c48d6475f9cba, type: 3}
+    count: 3
+    spawnChance: 0.5
+  - enemy: {fileID: 5935356893533325771, guid: 0e0787d8c62e673459a9ebf0fd54bf6a, type: 3}
+    count: 2
+    spawnChance: 0.4
+  - enemy: {fileID: 6398529275918465791, guid: ee13801965f083047b136c52f29ac6fc, type: 3}
+    count: 2
+    spawnChance: 0.4
+  - enemy: {fileID: 8824652314346789277, guid: afb93677256f09044be09fe2beb7070e, type: 3}
+    count: 2
+    spawnChance: 0.35
+  - enemy: {fileID: 3730299488419269106, guid: ac8b865205952b74e87ab01a0c0b0114, type: 3}
+    count: 2
+    spawnChance: 0.3
+  - enemy: {fileID: 2545295643079306291, guid: 108f776bffc53034ab67a20d0c0bf74e, type: 3}
+    count: 1
+    spawnChance: 0.2
+  secondsBetweenWaves: 20
+  secondsDelta: -1
+  spawnCount: 5
+  spawnDelta: 2
+  spawnRate: 3.5
+  spawnPoints: []
+  targets:
+  - Player
+  - Camp
+  currentState: 1

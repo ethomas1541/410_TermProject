@@ -1,165 +1,141 @@
-/*
-https://www.youtube.com/watch?v=Vrld13ypX_I&t=0s (part 1)
-https://www.youtube.com/watch?v=q0SBfDFn2Bs&t=607s (part 2)
-*/
-
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.AI;
+
+[System.Serializable]
+public class WaveEnemy
+{
+    public GameObject enemy;
+    public int count;
+    public float spawnChance;
+}
+
+public enum SpawnState { COUNTING, WAITING, SPAWNING }
 
 public class WaveSpawner : MonoBehaviour
 {
-    // define enum to track wave state
-    public enum SpawnState { SPAWNING, WAITING, COUNTING };
+    public WaveEnemy[] enemies;
+    public float secondsBetweenWaves = 5;
+    public float secondsDelta = 1;
+    public int spawnCount = 3;
+    public int spawnDelta = 2;
+    public float spawnRate = 3.5f;
 
-    // can change values of a wave instance inside inspector
-    [System.Serializable]
+    // Keep these public for debug purposes
+    public Transform[] spawnPoints;
+    public string[] targets = { "Player", "Camp" };
+    public SpawnState currentState = SpawnState.WAITING;
 
-    // define what a wave should be
-    public class Wave
-    {
-        public string name;
-        public Transform enemy;
-        public int count;
-        public float spawn_rate;
-    }
-
-    // for da wave
-    public Wave[] waves;
-    private int next_wave = 0;
-
-    // for enemies
-    public Transform[] spawn_points;
-
-    // time variables for da wave
-    public float time_between_waves = 5f;
-    private float wave_countdown;
-
-    // time between checking if enemeis are alive
-    private float search_countdown = 1f;
-
-    // holds current state of wave
-    public SpawnState state = SpawnState.COUNTING;
+    private float enemyCheckFrequency = 1;
+    private System.Random random = new System.Random();
 
     void Start()
     {
-        wave_countdown = time_between_waves;
-
-        // stores current state of spawner
-
+        // Get all spawn points excluding this (only children of wave spawner can be spawn points)
+        spawnPoints = GetComponentsInChildren<Transform>().Skip(1).ToArray();
+        StartCoroutine(Waiting());
     }
 
-    void Update()
+    // void Update()
+    // {
+    //     switch(currentState) {
+    //         case SpawnState.COUNTING:
+    //             StartCoroutine(Counting());
+    //             break;
+    //         case SpawnState.SPAWNING:
+    //             StartCoroutine(Spawning());
+    //             break;
+    //         case SpawnState.WAITING:
+    //             StartCoroutine(Waiting());
+    //             break;
+    //     }
+    // }
+
+    private IEnumerator Counting()
     {
-        if (state == SpawnState.WAITING)
-        {
-            // check if enemies still alive during wave
-            if (!EnemyIsAlive())
-            {
-                // start new wave
-                WaveCompleted();
+        Debug.Log("Counting");
+
+        // Check once per second if the enemies are alive
+        while (IsEnemyAlive()) {
+            yield return new WaitForSeconds(enemyCheckFrequency);
+        }
+
+        // End of state
+        currentState = SpawnState.WAITING;
+        StartCoroutine(Waiting());
+    }
+
+    private IEnumerator Spawning()
+    {
+        Debug.Log("Spawning");
+
+        // DO SPAWNING LOGIC HERE
+        for (int i = 0; i < spawnCount; i++) {
+            WaveEnemy waveEnemy = SelectRandomWaveEnemy();
+            SpawnWaveEnemy(waveEnemy);
+            yield return new WaitForSeconds(spawnRate);
+        }
+
+        spawnCount += spawnDelta;
+
+        // End of state
+        currentState = SpawnState.COUNTING;
+        StartCoroutine(Counting());
+    }
+
+    private IEnumerator Waiting()
+    {
+        // Wait between waves then update wait time
+        yield return new WaitForSeconds(secondsBetweenWaves);
+        UpdateSecondsBetweenWaves();
+
+        // End of state
+        currentState = SpawnState.SPAWNING;
+        StartCoroutine(Spawning());
+    }
+
+    private void UpdateSecondsBetweenWaves()
+    {
+        // Keep the seconds between waves above 0
+        secondsBetweenWaves = (secondsBetweenWaves + secondsDelta > 0) ? secondsBetweenWaves + secondsDelta : secondsBetweenWaves;
+    }
+
+
+    private WaveEnemy SelectRandomWaveEnemy()
+    {
+        WaveEnemy selectedEnemy = null;
+
+        float totalWeight = enemies.Sum(e => e.spawnChance);
+        float randomValue = (float)random.NextDouble() * totalWeight;
+
+        foreach (WaveEnemy enemy in enemies) {
+            if (randomValue < enemy.spawnChance) {
+                selectedEnemy = enemy;
+                break;
             }
-            else
-            {
-                // enemies still alive so stop here
-                return;
-            }
+
+            randomValue -= enemy.spawnChance;
         }
 
-        // start spawning waves
-        if (wave_countdown <= 0)
-        {
-            // make sure waves are not already spawning
-            if (state != SpawnState.SPAWNING)
-            {
-                // calls the IEnumerator SpawnWave method to start spawning
-                StartCoroutine(SpawnWave(waves[next_wave]));
-            }
-        }
-        else
-        {
-            wave_countdown -= Time.deltaTime;
+        // If we didn't select an enemy then just select the first enemy
+        selectedEnemy = (selectedEnemy == null) ? enemies[0] : selectedEnemy;
+
+        return selectedEnemy;
+    }
+
+    private void SpawnWaveEnemy(WaveEnemy waveEnemy)
+    {
+        for (int i = 0; i < waveEnemy.count; i++) {
+            Transform spawnPoint = spawnPoints[random.Next(0, waveEnemy.count)];
+            Enemy enemy = Instantiate(waveEnemy.enemy, spawnPoint.position, spawnPoint.rotation).GetComponent<Enemy>();
+            enemy.targetTag = targets[random.Next(0, targets.Length)];
         }
     }
 
-    void WaveCompleted()
+    private bool IsEnemyAlive()
     {
-        Debug.Log("wave complete");
-
-        // start counting down again
-        state = SpawnState.COUNTING;
-
-        wave_countdown = time_between_waves;
-
-        // check if index of next wave is > number of waves
-        if (next_wave + 1 > waves.Length - 1)
-        {
-            next_wave = 0;
-
-            // from here can edit waves (stat multiplier, game finish screen, start new scene, etc.)
-            Debug.Log("completed all waves, looping...");
-        }
-        else
-        {
-            // continue to next wave
-            next_wave++;
-        }
-
-    }
-
-    // check if enemy alive or 💀
-    bool EnemyIsAlive()
-    {
-        search_countdown -= Time.deltaTime;
-        if (search_countdown <= 0f)
-        {
-            // enemies are still alive, check again in one second
-            search_countdown = 1f;
-
-            if (GameObject.FindGameObjectWithTag("Enemy") == null)
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    // wave nursery (method will wait a certain amount of seconds before continuing)
-    IEnumerator SpawnWave(Wave _wave)
-    {
-        Debug.Log("Spawning wave: " + _wave.name);
-
-        // fight begins
-        state = SpawnState.SPAWNING;
-
-        // spawn
-        for (int i = 0; i < _wave.count; i++)
-        {
-            SpawnEnemy(_wave.enemy);
-
-            // wait some time before spawning another enemy
-            yield return new WaitForSeconds(1f / _wave.spawn_rate);
-        }
-
-        // wait for player to finish the wave
-        state = SpawnState.WAITING;
-
-        // stops IEnumerator from expecting a return value
-        yield break;
-    }
-
-    // where enemies are born
-    void SpawnEnemy(Transform _enemy)
-    {
-        Debug.Log("Spawning: " + _enemy.name);
-
-        // choose random spawn point
-        Transform _sp = spawn_points[Random.Range(0, spawn_points.Length)];
-
-        // instantiate enemy at Game Manager's position (0,0,0)
-        Transform e = Instantiate(_enemy, _sp.position, _sp.rotation);
-
-        // Make this game object active
-        e.gameObject.SetActive(true);
+        // We should limit the number of times we do this per second
+        return GameObject.FindGameObjectWithTag("Enemy") != null;
     }
 }
