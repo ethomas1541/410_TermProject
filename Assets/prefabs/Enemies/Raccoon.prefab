@@ -463,9 +463,9 @@ MonoBehaviour:
   attackCooldown: 2
   targetTag: Camp
   approachAudio: {fileID: 0}
-  hitAudio: {fileID: 0}
-  attackAudio: {fileID: 0}
-  deathAudio: {fileID: 0}
+  hitAudio: {fileID: 8300000, guid: 1a45e4ffc4a0c9940b58cfa6f97df7dc, type: 3}
+  attackAudio: {fileID: 8300000, guid: eafad37d823ae574a8c099f299fe3012, type: 3}
+  deathAudio: {fileID: 8300000, guid: 8f1978f787a0f804fa8790b7c38138f4, type: 3}
   isApproaching: 0
   isAttacking: 0
   isHit: 0
