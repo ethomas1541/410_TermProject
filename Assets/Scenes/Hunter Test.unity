@@ -236,71 +236,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WoodAmount: 2000
   WoodHUD: {fileID: 1544357502}
---- !u!1001 &1372630389
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1388896406874980453, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_Name
-      value: Squirrel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8383567760082117137, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8383567760082117137, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461803588259240628, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -14.580449
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461803588259240628, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461803588259240628, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.887907
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461803588259240628, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461803588259240628, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461803588259240628, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461803588259240628, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461803588259240628, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461803588259240628, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461803588259240628, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 67197bb8428f7fd469ce05d0be8d1b19, type: 3}
 --- !u!114 &1544357502 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 880522646636927273, guid: d472bc5b0ed119d428dc6e21ec5fe944, type: 3}
@@ -821,6 +756,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Camp
       objectReference: {fileID: 0}
+    - target: {fileID: 2229159177555417699, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
+      propertyPath: initialHealth
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 2847143225305934345, guid: fe61c06bf19f06e4d8db65f3edc62d7e, type: 3}
       propertyPath: m_TagString
       value: Camp
@@ -1147,4 +1086,3 @@ SceneRoots:
   - {fileID: 1955977002}
   - {fileID: 1833846014}
   - {fileID: 3954628717737197115}
-  - {fileID: 1372630389}

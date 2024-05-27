@@ -3286,6 +3286,8 @@ MonoBehaviour:
     damage: 25
   - tag: Tree
     damage: 25
+  damageCollider: {fileID: 6513554905764041229}
+  DisableOnStart: 1
 --- !u!1 &9046830434561562377
 GameObject:
   m_ObjectHideFlags: 0

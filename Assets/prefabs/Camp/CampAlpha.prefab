@@ -78,7 +78,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 8113311608650518400}
   UpgradePrompt: {fileID: 5509300431997063822}
   Wallet: {fileID: 0}
-  HPcontroller: {fileID: 0}
+  HPcontroller: {fileID: 2229159177555417699}
   lvlCost: 50
   dmgTaken: 0
   RepairCost: 0
