@@ -13,11 +13,17 @@ public class TagDamage {
 public class DamageTrigger : MonoBehaviour
 {
     public List<TagDamage> tagDamages = new List<TagDamage>();
-    private Collider damageCollider;
+    public Collider damageCollider;
+
+    public bool DisableOnStart = true;
 
     void Start() {
-        damageCollider = GetComponent<Collider>();
-        DisableDamage();
+        // damageCollider = GetComponent<Collider>();
+        // ^ trying to minimize the number of things that need to be fetched by start functions - Hunter
+        if (DisableOnStart)
+        {
+            DisableDamage();
+        }
     }
 
     public void EnableDamage() {
