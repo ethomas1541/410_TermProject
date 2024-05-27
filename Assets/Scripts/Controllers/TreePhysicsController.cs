@@ -9,12 +9,6 @@
 // 5/15/24 - adding respawn coroutine - Hunter
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -51,6 +45,11 @@ public class TreePhysicsController : MonoBehaviour
     public GameObject Stump;
     public GameObject TreeModel;
 
+    // Sound
+    public AudioSource Audio;
+    public List<AudioClip> breakClips;
+    public List<AudioClip> fallClips;
+
     private BoxCollider treeCollider;
 
     // Pivotal for implementing the break physics
@@ -64,7 +63,8 @@ public class TreePhysicsController : MonoBehaviour
 
         treeCollider = GetComponent<BoxCollider>();
 
-        // Subscribe to the OnDeath event
+        // Subscribe to the OnDeath and OnTakeDamage event
+        healthController.OnTakeDamage += OnTakeDamage;
         healthController.OnDeath += OnDie;
 
         // Record EVERYTHING about the piece in its initial state. That way we can rebuild it.
@@ -77,7 +77,9 @@ public class TreePhysicsController : MonoBehaviour
         }
     }
 
-    public void OnDie() {
+    public void OnDie()
+    {
+
         StartCoroutine(Kill());
         StartCoroutine(Respawn());
 
@@ -94,15 +96,22 @@ public class TreePhysicsController : MonoBehaviour
 
         // As soon as these are set to true, the tree will fall apart
         // (or explode, it really depends on if the model clips through itself...)
+
+        Audio.clip = fallClips[Random.Range(0, fallClips.Count)];
+        Audio.Play();
+
         foreach(PieceData piece in pieces){
             piece.rb.detectCollisions=true;
             piece.rb.useGravity=true;
         }
+
         Stump.SetActive(true);
         Wallet.AddWood(WoodValue);
 
         fast_falling = true;
-
+        // while (Audio.isPlaying) {
+        //     yield return null;
+        // }
         yield return new WaitForSeconds(5f);
 
         // Cleanup
@@ -143,6 +152,12 @@ public class TreePhysicsController : MonoBehaviour
         TreeModel.SetActive(true);
         treeCollider.enabled = true;
     }
+
+    void OnTakeDamage() {
+        Audio.clip = breakClips[Random.Range(0, breakClips.Count)];
+        Audio.Play();
+    }
+
     void FixedUpdate(){
         if(fast_falling){
             foreach(PieceData piece in pieces){
