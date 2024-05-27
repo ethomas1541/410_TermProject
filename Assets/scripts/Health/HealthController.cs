@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class HealthController : MonoBehaviour
 {
@@ -20,11 +21,32 @@ public class HealthController : MonoBehaviour
     public delegate void Death();
     public event Death OnDeath;
 
+    public AudioSource Audio;
+
+    public List<AudioClip> breakClips;
+
+    public List<AudioClip> fallClips;
+
+    private int breakClipCount;
+
+    private int fallClipCount;
+
+    void Start(){
+        breakClipCount = breakClips.Count;
+        fallClipCount = fallClips.Count;
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
-        if (currentHealth <= 0) { OnDeath?.Invoke(); }
+        if (currentHealth <= 0){ 
+            OnDeath?.Invoke();
+            Audio.clip = fallClips[Random.Range(0, fallClipCount)];
+        }else{
+            Audio.clip = breakClips[Random.Range(0, breakClipCount)];
+        }
+        Audio.Play();
 
         OnHealthChange?.Invoke(currentHealth);
         OnTakeDamage?.Invoke();
