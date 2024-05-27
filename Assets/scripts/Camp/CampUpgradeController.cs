@@ -39,6 +39,7 @@ public class CampUpgradeController : MonoBehaviour
 
     // poacher
     public TextMeshProUGUI PoacherCostTxT;
+    public GameObject Poacher;
 
     void Start() 
     {
@@ -104,12 +105,10 @@ public class CampUpgradeController : MonoBehaviour
 
     public void HirePoacher()
     {
-        // Implementation
-        if (Wallet.WoodAmount >= 300)
+        if (Wallet.WoodAmount >= 300 && !(Poacher.activeSelf))
         {
             Wallet.SpendWood(300);
-            // poacher.SetActive(true);
-            // TODO: find asset for poacher and set behavior
+            Poacher.SetActive(true);
         }
     }
 
