@@ -306,6 +306,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3846059068309742651, guid: ac595ab04317e4c40a7a1340a9c600ff, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6743421752272250024, guid: ac595ab04317e4c40a7a1340a9c600ff, type: 3}
       propertyPath: m_LocalScale.x
       value: 90
@@ -2344,6 +2348,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 610246368}
+    - target: {fileID: 5303874204010545185, guid: ab24c4f6a2c98ab42a93b0aab4ffeab9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402191319255693784, guid: ab24c4f6a2c98ab42a93b0aab4ffeab9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6035597051155873834, guid: ab24c4f6a2c98ab42a93b0aab4ffeab9, type: 3}
       propertyPath: m_Name
       value: Top Down Camera
