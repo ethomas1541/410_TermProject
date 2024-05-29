@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -927,10 +927,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4581798042466574007, guid: d472bc5b0ed119d428dc6e21ec5fe944, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4867265875309325091, guid: d472bc5b0ed119d428dc6e21ec5fe944, type: 3}
       propertyPath: m_Name
       value: Paul
@@ -6613,6 +6609,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
+      propertyPath: secondsDelta
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
+      propertyPath: enemies.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
+      propertyPath: secondsBetweenWaves
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
       propertyPath: enemies.Array.data[0].count
       value: 3
       objectReference: {fileID: 0}
@@ -6625,6 +6633,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
+      propertyPath: enemies.Array.data[2].enemy
+      value: 
+      objectReference: {fileID: 3730299488419269106, guid: ac8b865205952b74e87ab01a0c0b0114, type: 3}
+    - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
       propertyPath: enemies.Array.data[3].count
       value: 1
       objectReference: {fileID: 0}
@@ -6635,6 +6647,14 @@ PrefabInstance:
     - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
       propertyPath: enemies.Array.data[5].count
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
+      propertyPath: enemies.Array.data[3].spawnChance
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
+      propertyPath: enemies.Array.data[4].spawnChance
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8020639898520917811, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
       propertyPath: m_Name
