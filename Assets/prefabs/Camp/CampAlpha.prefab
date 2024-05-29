@@ -2941,9 +2941,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hire a Poacher
-
-    (Not Implemented)'
+  m_text: Hire a Poacher
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7003,6 +7001,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7902403322178209455, guid: aaefbbb928a8bfa4b9999a9db1fefed8, type: 3}
+      propertyPath: attackAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 937cce770b325884cafddd5b737b9903, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
