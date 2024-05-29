@@ -32,6 +32,14 @@ public class WaveSpawner : MonoBehaviour
     private float enemyCheckFrequency = 1;
     private System.Random random = new System.Random();
 
+    // Wave timer
+    public delegate void TimerChange(float timeLeft);
+    public event TimerChange OnTimeChange;
+
+    // Wave increment
+    public delegate void WavesChange(int wave);
+    public event WavesChange OnWavesChange;
+
     // Waves completed
     public delegate void WavesCompltes();
     public event WavesCompltes OnWavesCompleted;
@@ -71,6 +79,8 @@ public class WaveSpawner : MonoBehaviour
         currentWave += 1;
         spawnCount += spawnDelta;
 
+        OnWavesChange?.Invoke(currentWave);
+
         // We are done
         if (currentWave > waveCount) {
             OnWavesCompleted?.Invoke();
@@ -82,9 +92,15 @@ public class WaveSpawner : MonoBehaviour
     }
 
     private IEnumerator Waiting()
-    {
+    {    float countdown = secondsBetweenWaves;
+
         // Wait between waves then update wait time
-        yield return new WaitForSeconds(secondsBetweenWaves);
+        while (countdown > 0) {
+            yield return new WaitForSeconds(1f);
+            countdown -= 1f;
+            OnTimeChange?.Invoke(countdown);
+        }
+
         UpdateSecondsBetweenWaves();
 
         // End of state
