@@ -32,6 +32,6 @@ public class WoodInventory : MonoBehaviour
 
     public void UpdateHUD()
     {
-        WoodHUD.text = "Wood: " + WoodAmount;
+        WoodHUD.text = WoodAmount.ToString();
     }
 }
