@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3301400450699689043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3380877843726247412}
+  - component: {fileID: 3513832972095383170}
+  m_Layer: 0
+  m_Name: RiverTrack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3380877843726247412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3301400450699689043}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -70.44972, y: 30.427048, z: 38.44519}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3513832972095383170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3301400450699689043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37e5385efd7064cb1d54c94960acae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Resolution: 20
+  m_Appearance:
+    pathColor: {r: 0.9883994, g: 1, b: 0, a: 1}
+    inactivePathColor: {r: 0.9839501, g: 1, b: 0.040880322, a: 1}
+    width: 0.2
+  m_Looped: 0
+  m_Waypoints:
+  - position: {x: 20.823523, y: 0, z: -0.3398819}
+    tangent: {x: 1, y: 0, z: 0}
+    roll: 0
+  - position: {x: 0, y: 0, z: -0.5096588}
+    tangent: {x: 1, y: 0, z: 0}
+    roll: 0
+  - position: {x: -17.062191, y: 0, z: -0.5096588}
+    tangent: {x: 1, y: 0, z: 0}
+    roll: 0
+  - position: {x: -30.744993, y: 0, z: 2.1705322}
+    tangent: {x: 1, y: 0, z: 0}
+    roll: 0
+  - position: {x: -45.243507, y: 0, z: 2.1705322}
+    tangent: {x: 1, y: 0, z: 0}
+    roll: 0
+  - position: {x: -60.208145, y: 0, z: 2.1705322}
+    tangent: {x: 1, y: 0, z: 0}
+    roll: 0
+  - position: {x: -74.473595, y: 0, z: 6.482147}
+    tangent: {x: 1, y: 0, z: 0}
+    roll: 0
+  - position: {x: -89.438225, y: 0, z: 16.154152}
+    tangent: {x: 1, y: 0, z: 0}
+    roll: 0
+  - position: {x: -101.60613, y: 0, z: 28.389816}
+    tangent: {x: 1, y: 0, z: 0}
+    roll: 0
+  - position: {x: -116.33771, y: 0, z: 35.381622}
+    tangent: {x: 1, y: 0, z: 0}
+    roll: 0
+  - position: {x: -132.46764, y: 0, z: 40.975067}
+    tangent: {x: 1, y: 0, z: 0}
+    roll: 0
