@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 6536321904318242448}
   - component: {fileID: 3892444590633013761}
   - component: {fileID: 5481588744390370985}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Attack Range Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

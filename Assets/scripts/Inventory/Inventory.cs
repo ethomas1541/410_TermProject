@@ -18,7 +18,6 @@ public class Inventory
 
         AddItem(new Item { itemType = Item.ItemType.Axe, amount = 1 });
         AddItem(new Item { itemType = Item.ItemType.Wood, amount = 10});
-        AddItem(new Item { itemType = Item.ItemType.Axe, amount = 1});
 
         //Debug.Log(itemList[1].itemType + " " + itemList[1].amount);
     }
