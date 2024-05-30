@@ -21,14 +21,28 @@ public class WaveSpawner : MonoBehaviour
     public int spawnCount = 3;
     public int spawnDelta = 2;
     public float spawnRate = 3.5f;
+    public int waveCount = 5;
 
     // Keep these public for debug purposes
     public Transform[] spawnPoints;
     public string[] targets = { "Player", "Camp" };
     public SpawnState currentState = SpawnState.WAITING;
+    public int currentWave = 1;
 
     private float enemyCheckFrequency = 1;
     private System.Random random = new System.Random();
+
+    // Wave timer
+    public delegate void TimerChange(float timeLeft);
+    public event TimerChange OnTimeChange;
+
+    // Wave increment
+    public delegate void WavesChange(int wave);
+    public event WavesChange OnWavesChange;
+
+    // Waves completed
+    public delegate void WavesCompltes();
+    public event WavesCompltes OnWavesCompleted;
 
     void Start()
     {
@@ -36,21 +50,6 @@ public class WaveSpawner : MonoBehaviour
         spawnPoints = GetComponentsInChildren<Transform>().Skip(1).ToArray();
         StartCoroutine(Waiting());
     }
-
-    // void Update()
-    // {
-    //     switch(currentState) {
-    //         case SpawnState.COUNTING:
-    //             StartCoroutine(Counting());
-    //             break;
-    //         case SpawnState.SPAWNING:
-    //             StartCoroutine(Spawning());
-    //             break;
-    //         case SpawnState.WAITING:
-    //             StartCoroutine(Waiting());
-    //             break;
-    //     }
-    // }
 
     private IEnumerator Counting()
     {
@@ -77,7 +76,15 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnRate);
         }
 
+        currentWave += 1;
         spawnCount += spawnDelta;
+
+        OnWavesChange?.Invoke(currentWave);
+
+        // We are done
+        if (currentWave > waveCount) {
+            OnWavesCompleted?.Invoke();
+        }
 
         // End of state
         currentState = SpawnState.COUNTING;
@@ -85,9 +92,15 @@ public class WaveSpawner : MonoBehaviour
     }
 
     private IEnumerator Waiting()
-    {
+    {    float countdown = secondsBetweenWaves;
+
         // Wait between waves then update wait time
-        yield return new WaitForSeconds(secondsBetweenWaves);
+        while (countdown > 0) {
+            yield return new WaitForSeconds(1f);
+            countdown -= 1f;
+            OnTimeChange?.Invoke(countdown);
+        }
+
         UpdateSecondsBetweenWaves();
 
         // End of state
