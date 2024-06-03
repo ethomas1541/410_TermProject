@@ -108,8 +108,10 @@ public class WaveSpawner : MonoBehaviour
             // We are done
             OnWavesCompleted?.Invoke();
             Transform spawnPoint = spawnPoints[random.Next(0, spawnPoints.Length)];
-            Enemy enemy = Instantiate(finalBoss, spawnPoint.position, spawnPoint.rotation).GetComponent<Enemy>();
-            enemy.targetTag = "Player";
+            GameObject enemy = Instantiate(finalBoss, spawnPoint.position, spawnPoint.rotation);
+            if (enemy.GetComponent<Enemy>() != null) {
+                enemy.GetComponent<Enemy>().targetTag = "Player";
+            }
         }
     }
 

@@ -62,7 +62,7 @@ public class Lorax : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         gfxAnimator = GetComponentInChildren<Animator>();
         healthController = GetComponent<HealthController>();
-        target = GameObject.FindWithTag("PLayer").transform;
+        target = GameObject.FindWithTag("Player").transform;
 
         // Set the nav mesh agent attributes
         navMeshAgent.speed = speed;
