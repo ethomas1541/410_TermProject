@@ -31,7 +31,7 @@ public class WaveUI : MonoBehaviour
 
     public void OnWavesCompleted()
     {
-        waveStatus.text = $"All Waves Completed!";
+        waveStatus.text = $"Face the Boss!!";
     }
 
 }

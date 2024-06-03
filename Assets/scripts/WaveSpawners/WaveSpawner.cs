@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -16,6 +17,7 @@ public enum SpawnState { COUNTING, WAITING, SPAWNING }
 public class WaveSpawner : MonoBehaviour
 {
     public WaveEnemy[] enemies;
+    public GameObject finalBoss;
     public float secondsBetweenWaves = 5;
     public float secondsDelta = 1;
     public int spawnCount = 3;
@@ -69,6 +71,9 @@ public class WaveSpawner : MonoBehaviour
     {
         Debug.Log("Spawning");
 
+        currentWave += 1;
+        OnWavesChange?.Invoke(currentWave);
+
         // DO SPAWNING LOGIC HERE
         for (int i = 0; i < spawnCount; i++) {
             WaveEnemy waveEnemy = SelectRandomWaveEnemy();
@@ -76,15 +81,7 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnRate);
         }
 
-        currentWave += 1;
         spawnCount += spawnDelta;
-
-        OnWavesChange?.Invoke(currentWave);
-
-        // We are done
-        if (currentWave > waveCount) {
-            OnWavesCompleted?.Invoke();
-        }
 
         // End of state
         currentState = SpawnState.COUNTING;
@@ -104,8 +101,16 @@ public class WaveSpawner : MonoBehaviour
         UpdateSecondsBetweenWaves();
 
         // End of state
-        currentState = SpawnState.SPAWNING;
-        StartCoroutine(Spawning());
+        if (currentWave < waveCount) {
+            currentState = SpawnState.SPAWNING;
+            StartCoroutine(Spawning());
+        } else {
+            // We are done
+            OnWavesCompleted?.Invoke();
+            Transform spawnPoint = spawnPoints[random.Next(0, spawnPoints.Length)];
+            Enemy enemy = Instantiate(finalBoss, spawnPoint.position, spawnPoint.rotation).GetComponent<Enemy>();
+            enemy.targetTag = "Player";
+        }
     }
 
     private void UpdateSecondsBetweenWaves()
@@ -140,7 +145,7 @@ public class WaveSpawner : MonoBehaviour
     private void SpawnWaveEnemy(WaveEnemy waveEnemy)
     {
         for (int i = 0; i < waveEnemy.count; i++) {
-            Transform spawnPoint = spawnPoints[random.Next(0, waveEnemy.count)];
+            Transform spawnPoint = spawnPoints[random.Next(0, spawnPoints.Length)];
             Enemy enemy = Instantiate(waveEnemy.enemy, spawnPoint.position, spawnPoint.rotation).GetComponent<Enemy>();
             enemy.targetTag = targets[random.Next(0, targets.Length)];
         }
