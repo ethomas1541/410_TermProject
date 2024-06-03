@@ -20,12 +20,23 @@ namespace Cinemachine
         public GameObject Player;
 
         float m_Position;       // The position along the path to set the cart to in path units
+        float m_TargetPosition; // The target position (closest point to the player)
+        public float moveSpeed = 9999999f; // Speed at which the cart moves along the path
         private CinemachinePathBase.PositionUnits m_PositionUnits = CinemachinePathBase.PositionUnits.PathUnits;
 
         void Update()
         {
             // Find closest point to the Player along the path
-            SetCartPosition(m_Path.FindClosestPoint(Player.transform.position, 0, -1, 10));
+            //SetCartPosition(m_Path.FindClosestPoint(Player.transform.position, 0, -1, 5));
+            
+            // Find the closest point to the Player and update the target position
+            m_TargetPosition = m_Path.FindClosestPoint(Player.transform.position, 0, -1, 5);
+
+            // Move the cart smoothly towards the target position
+            m_Position = Mathf.MoveTowards(m_Position, m_TargetPosition, moveSpeed * Time.deltaTime);
+
+            // Set the cart's position and rotation
+            SetCartPosition(m_Position);
         }
 
         // Set cart's position to closest point

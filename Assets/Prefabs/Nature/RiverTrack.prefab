@@ -73,14 +73,71 @@ MonoBehaviour:
     tangent: {x: 1, y: 0, z: 0}
     roll: 0
   - position: {x: -89.438225, y: 0, z: 16.154152}
-    tangent: {x: 1, y: 0, z: 0}
+    tangent: {x: -1.0431747, y: 0, z: 1.6369629}
     roll: 0
   - position: {x: -101.60613, y: 0, z: 28.389816}
     tangent: {x: 1, y: 0, z: 0}
     roll: 0
   - position: {x: -116.33771, y: 0, z: 35.381622}
-    tangent: {x: 1, y: 0, z: 0}
+    tangent: {x: 0, y: 0, z: 0}
     roll: 0
   - position: {x: -132.46764, y: 0, z: 40.975067}
-    tangent: {x: 1, y: 0, z: 0}
+    tangent: {x: 1, y: 2, z: 0}
+    roll: 0
+  - position: {x: -138.65991, y: 0, z: 46.94416}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -148.56358, y: 0, z: 49.946587}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -156.03201, y: 0, z: 55.213676}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -156.63998, y: 0, z: 65.93342}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -151.3175, y: 0, z: 79.9302}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -138.29868, y: 0, z: 92.50713}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -117.902916, y: 0, z: 103.96133}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -95.8272, y: 0, z: 117.70635}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -79.77515, y: 0, z: 129.39725}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -57.877632, y: 0, z: 138.89612}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -23.704666, y: 0, z: 138.60385}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -8.821707, y: 0, z: 124.72091}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -7.967842, y: 0, z: 112.59159}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -31.372625, y: 0, z: 105.430916}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -51.416275, y: 0, z: 86.57932}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -58.599915, y: 0, z: 63.48977}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -68.70628, y: 0, z: 46.53795}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -90.065155, y: 0, z: 37.477493}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -101.19448, y: 0, z: 28.124756}
+    tangent: {x: 0, y: 0, z: 0}
     roll: 0
