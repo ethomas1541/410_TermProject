@@ -30,9 +30,6 @@ public class PlayerController : MonoBehaviour
         weaponInventory = GetComponent<WeaponInventory>();
         camera = Camera.main;
 
-        // Subscribe to the on take damage method
-        healthController.OnTakeDamage += TakeDamage;
-
         // We should only calculate this once for performance
         jumpVelocity = Mathf.Sqrt(2 * jumpHeight * Mathf.Abs(Physics.gravity.y));
 
@@ -123,10 +120,6 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpVelocity, rb.velocity.z);
             animator.SetTrigger("Jump");
         }
-    }
-
-    public void TakeDamage() {
-        animator.SetTrigger("Hit");
     }
 
     public void OnAttack(InputAction.CallbackContext context)
