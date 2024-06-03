@@ -6609,6 +6609,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
+      propertyPath: finalBoss
+      value: 
+      objectReference: {fileID: 2545295643079306291, guid: 108f776bffc53034ab67a20d0c0bf74e, type: 3}
+    - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
+      propertyPath: waveCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
+      propertyPath: currentWave
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967634779278034066, guid: 130c1fb46ea795d4789292400d96b3f9, type: 3}
       propertyPath: secondsDelta
       value: -5
       objectReference: {fileID: 0}
