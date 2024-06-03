@@ -132,19 +132,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 50
   currentHealth: 50
-  Audio: {fileID: 6491177888542664619}
-  breakClips:
-  - {fileID: 8300000, guid: a0b67d27767e3de468d7b6dc6b8d4d55, type: 3}
-  - {fileID: 8300000, guid: abf26b362a4dc5642bcc98fc3e67dbf4, type: 3}
-  - {fileID: 8300000, guid: f20d63c22df7fd94889e4941fd309bfc, type: 3}
-  - {fileID: 8300000, guid: 3389d32877ff6f84a82a3834d1497163, type: 3}
-  - {fileID: 8300000, guid: 04697aa626a80fc478063b4a026dd8b7, type: 3}
-  fallClips:
-  - {fileID: 8300000, guid: b6ceeb269f52e8141bec589efc7c33b2, type: 3}
-  - {fileID: 8300000, guid: e7cf8deebc33a7e439ee68f263d248eb, type: 3}
-  - {fileID: 8300000, guid: 2abd3b8e107a11649925b6f3cc60f490, type: 3}
-  - {fileID: 8300000, guid: 9a9a40e77f279e7428bebf6f03c52ebf, type: 3}
-  - {fileID: 8300000, guid: 7b158f76848e4b34fbf25dde2df7b459, type: 3}
 --- !u!114 &6014960746861107414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +148,19 @@ MonoBehaviour:
   WoodValue: 10
   Stump: {fileID: 530755940946780288}
   TreeModel: {fileID: 6342847719445066203}
+  Audio: {fileID: 6491177888542664619}
+  breakClips:
+  - {fileID: 8300000, guid: a0b67d27767e3de468d7b6dc6b8d4d55, type: 3}
+  - {fileID: 8300000, guid: abf26b362a4dc5642bcc98fc3e67dbf4, type: 3}
+  - {fileID: 8300000, guid: f20d63c22df7fd94889e4941fd309bfc, type: 3}
+  - {fileID: 8300000, guid: 3389d32877ff6f84a82a3834d1497163, type: 3}
+  - {fileID: 8300000, guid: 04697aa626a80fc478063b4a026dd8b7, type: 3}
+  fallClips:
+  - {fileID: 8300000, guid: b6ceeb269f52e8141bec589efc7c33b2, type: 3}
+  - {fileID: 8300000, guid: e7cf8deebc33a7e439ee68f263d248eb, type: 3}
+  - {fileID: 8300000, guid: 2abd3b8e107a11649925b6f3cc60f490, type: 3}
+  - {fileID: 8300000, guid: 9a9a40e77f279e7428bebf6f03c52ebf, type: 3}
+  - {fileID: 8300000, guid: 7b158f76848e4b34fbf25dde2df7b459, type: 3}
 --- !u!1 &5024916859659968524
 GameObject:
   m_ObjectHideFlags: 0
