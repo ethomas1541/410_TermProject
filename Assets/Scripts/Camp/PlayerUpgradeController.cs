@@ -40,6 +40,13 @@ public class PlayerUpgradeController : MonoBehaviour
     public TextMeshProUGUI MoveCostTxt;
 
     // upgrade sounds
+    public AudioSource aux;
+    public AudioClip HealSFX;
+    public AudioClip HealthUpgradeSFX;
+    public AudioClip DMGUpSFX;
+    public AudioClip SpeedUpSFX;
+    public AudioClip closeSFX;
+
 
     void Start()
     {
@@ -63,6 +70,7 @@ public class PlayerUpgradeController : MonoBehaviour
                 dmgTaken = 0;
                 HealCost = 0;
                 HealCostTxt.text = "HP Full";
+                aux.PlayOneShot(HealSFX);
             }
         }
     }
@@ -78,6 +86,7 @@ public class PlayerUpgradeController : MonoBehaviour
                 HealthLvL++;
                 HealthLVLCost += 15;
                 HealthCostTxt.text = HealthLVLCost + "Wood";
+                aux.PlayOneShot(HealthUpgradeSFX);
             }
             if (HealthLvL == 5)
             {
@@ -98,6 +107,7 @@ public class PlayerUpgradeController : MonoBehaviour
                 DMGLVL++;
                 DMGLVLCost += 20;
                 DMGCostTxt.text = DMGLVLCost + "Wood";
+                aux.PlayOneShot(DMGUpSFX);
             }
             if (DMGLVL == 7)
             {
@@ -117,6 +127,7 @@ public class PlayerUpgradeController : MonoBehaviour
                 speedLVL++;
                 SpeedLVLCost += 10;
                 MoveCostTxt.text = SpeedLVLCost + "Wood";
+                aux.PlayOneShot(SpeedUpSFX);
             }
             if (speedLVL == 3)
             {
@@ -128,7 +139,8 @@ public class PlayerUpgradeController : MonoBehaviour
     public void ExitMenu()
     {
         if (upgradeMenu.activeSelf)
-        {
+        {   
+            aux.PlayOneShot(closeSFX);
             SetActiveRecursively(upgradeMenu, false);
         }
     }
