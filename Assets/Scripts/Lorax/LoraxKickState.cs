@@ -8,6 +8,8 @@ public class LoraxKickState : LoraxState {
         prevStopDistance = lorax.navMeshAgent.stoppingDistance;
         lorax.navMeshAgent.stoppingDistance = 1;
         lorax.navMeshAgent.speed = 8;
+        lorax.audioSource.clip = lorax.kickApproachAudio;
+        lorax.audioSource.Play();
     }
 
     public override void ExitState()
@@ -23,6 +25,8 @@ public class LoraxKickState : LoraxState {
         float sqaredDistance = (lorax.transform.position - lorax.target.position).magnitude;
 
         if (sqaredDistance <= 2) {
+            lorax.audioSource.clip = lorax.kickAudio;
+            lorax.audioSource.Play();
             lorax.FaceTarget();
             lorax.gfxAnimator.SetTrigger("kick");
             lorax.target.GetComponent<HealthController>().TakeDamage(lorax.kickDamage);

@@ -4,6 +4,8 @@ public class LoraxDieState : LoraxState {
     public override void EnterState()
     {
         lorax.gfxAnimator.SetTrigger("die");
+        lorax.audioSource.clip = lorax.deathAudio;
+        lorax.audioSource.Play();
     }
 
     public override void ExitState()

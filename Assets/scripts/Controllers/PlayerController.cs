@@ -40,22 +40,6 @@ public class PlayerController : MonoBehaviour
         // passing inventory object to UI script
         Debug.Log(uiInventory);
         uiInventory.SetInventory(inventory);
-
-        // test spawn items
-        Debug.Log(Item.ItemType.Wood);
-        ItemWorld.SpawnItemWorld(new Vector3((float)-2.52999997,(float)0.5, (float)-6.36000013), new Item { itemType = Item.ItemType.Wood, amount = 1 });
-        ItemWorld.SpawnItemWorld(new Vector3((float)-7.52999997,(float)0.5, (float)-6.36000013), new Item { itemType = Item.ItemType.Wood, amount = 1 });
-    }
-
-    private void OnTriggerEnter3D(Collider collider)
-    {
-        ItemWorld itemWorld = collider.GetComponent<ItemWorld>();
-        if (itemWorld != null)
-        {
-            // touching item on ground
-            inventory.AddItem(itemWorld.GetItem());
-            itemWorld.DestroySelf();
-        }
     }
 
     void FixedUpdate()

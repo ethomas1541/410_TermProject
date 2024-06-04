@@ -447,9 +447,12 @@ MonoBehaviour:
   kickDamage: 10
   shootDamage: 5
   shootCooldown: 3
-  shootAudio: []
-  kickAudio: []
-  deathAudio: {fileID: 0}
+  shootAudio:
+  - {fileID: 8300000, guid: e38c41626263fc24d81fcce41ef419c7, type: 3}
+  - {fileID: 8300000, guid: 09e36ad4a5793664caaf6ceb03f21ab1, type: 3}
+  kickApproachAudio: {fileID: 8300000, guid: d8e93b49aae0291468b9a6ccf0b94247, type: 3}
+  kickAudio: {fileID: 8300000, guid: c2b65fa2ed468ef48ab620fd58f0d57b, type: 3}
+  deathAudio: {fileID: 8300000, guid: d5e4d687035a68d42b0d63ee27f9868b, type: 3}
   isApproaching: 0
   isAttacking: 0
   isKicking: 0
