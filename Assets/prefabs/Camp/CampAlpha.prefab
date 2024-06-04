@@ -4800,9 +4800,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CampUpgradeController, Assembly-CSharp
-        m_MethodName: BuyOXPet
+      - m_Target: {fileID: 840394308332464518}
+        m_TargetAssemblyTypeName: PlayerUpgradeController, Assembly-CSharp
+        m_MethodName: UpgradeMoveSPD
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7222,9 +7222,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CampUpgradeController, Assembly-CSharp
-        m_MethodName: BuyOXPet
+      - m_Target: {fileID: 840394308332464518}
+        m_TargetAssemblyTypeName: PlayerUpgradeController, Assembly-CSharp
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7368,8 +7368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 100
-  currentHealth: 100
+  initialHealth: 150
+  currentHealth: 150
 --- !u!1 &6354840896694534431
 GameObject:
   m_ObjectHideFlags: 0
@@ -7945,7 +7945,7 @@ GameObject:
   - component: {fileID: 188700237580703192}
   - component: {fileID: 2061392746147348714}
   - component: {fileID: 1868748310194216735}
-  - component: {fileID: 2533740013654919873}
+  - component: {fileID: 8506914562834804172}
   m_Layer: 0
   m_Name: InteractTrigger
   m_TagString: Untagged
@@ -8039,7 +8039,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2533740013654919873
+--- !u!114 &8506914562834804172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8048,12 +8048,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7194579175900083707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c7d1c8defa4aa48b645c943b1f636e, type: 3}
+  m_Script: {fileID: 11500000, guid: 13eacdb2d69fe7749a9d0eba54a2525a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeMenu: {fileID: 3976827115797115210}
+  upgradeMenu: {fileID: 3699930381804311733}
   UpgradePrompt: {fileID: 3496322243018058103}
-  UpgCtrl: {fileID: 6760047539869964670}
+  UpgCtrl: {fileID: 840394308332464518}
   openMenuKey: 102
 --- !u!1 &7222625025226611456
 GameObject:
@@ -8396,8 +8396,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CampUpgradeController, Assembly-CSharp
+      - m_Target: {fileID: 840394308332464518}
+        m_TargetAssemblyTypeName: PlayerUpgradeController, Assembly-CSharp
         m_MethodName: ExitMenu
         m_Mode: 1
         m_Arguments:
@@ -8529,9 +8529,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CampUpgradeController, Assembly-CSharp
-        m_MethodName: RepairCamp
+      - m_Target: {fileID: 840394308332464518}
+        m_TargetAssemblyTypeName: PlayerUpgradeController, Assembly-CSharp
+        m_MethodName: UpgradeDMG
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8861,14 +8861,17 @@ MonoBehaviour:
   Wallet: {fileID: 0}
   upgradeMenu: {fileID: 3699930381804311733}
   UpgradePrompt: {fileID: 3496322243018058103}
-  HPcontroller: {fileID: 0}
-  lvlCost: 25
+  HC: {fileID: 0}
+  HealthLVLCost: 25
   dmgTaken: 0
-  RepairCost: 0
+  HealCost: 0
+  PC: {fileID: 0}
+  SpeedLVLCost: 25
+  DT: {fileID: 0}
+  DMGLVLCost: 40
   HealCostTxt: {fileID: 2166716209437743234}
   HealthCostTxt: {fileID: 7495058562128917859}
   DMGCostTxt: {fileID: 9116690598264248639}
-  AtkSpdCostTxt: {fileID: 0}
   MoveCostTxt: {fileID: 8999388865839422689}
 --- !u!1 &8268414243416177712
 GameObject:
@@ -9553,8 +9556,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CampUpgradeController, Assembly-CSharp
+      - m_Target: {fileID: 840394308332464518}
+        m_TargetAssemblyTypeName: PlayerUpgradeController, Assembly-CSharp
         m_MethodName: UpgradeHealth
         m_Mode: 1
         m_Arguments:
