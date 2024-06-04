@@ -55,9 +55,12 @@ public class TreePhysicsController : MonoBehaviour
     // Pivotal for implementing the break physics
     private List<PieceData> pieces;
 
+    private CapsuleCollider caps;
+
     // Gravity's too slow. When the tree breaks, I make it a litte bit faster.
     private bool fast_falling = false;
     void Awake() {
+        caps = GetComponent<CapsuleCollider>();
         Wallet = GameObject.Find("Paul").GetComponent<WoodInventory>();
         pieces = new List<PieceData>();
 
@@ -85,6 +88,9 @@ public class TreePhysicsController : MonoBehaviour
 
         // this is so the player cant wack the stump for infinite wood
         treeCollider.enabled = false;
+        if(caps){
+            caps.enabled = false;
+        }
     }
 
     IEnumerator Kill()
@@ -151,6 +157,10 @@ public class TreePhysicsController : MonoBehaviour
         }
         TreeModel.SetActive(true);
         treeCollider.enabled = true;
+
+        if(caps){
+            caps.enabled = true;
+        }
     }
 
     void OnTakeDamage() {

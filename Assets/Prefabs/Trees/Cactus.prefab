@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 67525298261828430}
   - component: {fileID: 3676258441750171756}
   - component: {fileID: 6014960746861107414}
+  - component: {fileID: 2507745384957849693}
+  - component: {fileID: 5481974289923743197}
   m_Layer: 0
   m_Name: Cactus
   m_TagString: Tree
@@ -85,12 +87,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3924112, y: 3.066437, z: 1.3946552}
-  m_Center: {x: -0.10003805, y: -0.38451922, z: 0.080973625}
+  m_Size: {x: 2.59, y: 15.5016575, z: 2.65}
+  m_Center: {x: -0.10003805, y: 6.61, z: 0.080973625}
 --- !u!54 &67525298261828430
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -161,6 +163,41 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2abd3b8e107a11649925b6f3cc60f490, type: 3}
   - {fileID: 8300000, guid: 9a9a40e77f279e7428bebf6f03c52ebf, type: 3}
   - {fileID: 8300000, guid: 7b158f76848e4b34fbf25dde2df7b459, type: 3}
+--- !u!114 &2507745384957849693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419425783994695822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb67fab529f30a4dba95e46977e04ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &5481974289923743197
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419425783994695822}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.13
+  m_Height: 14.73
+  m_Direction: 1
+  m_Center: {x: 0, y: 6.7, z: 0}
 --- !u!1 &5024916859659968524
 GameObject:
   m_ObjectHideFlags: 0
