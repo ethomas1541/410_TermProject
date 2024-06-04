@@ -12,7 +12,8 @@ public class Lorax : MonoBehaviour
 
     [Header("Lorax Audio")]
     public AudioClip[] shootAudio;
-    public AudioClip[] kickAudio;
+    public AudioClip kickApproachAudio;
+    public AudioClip kickAudio;
     public AudioClip deathAudio;
 
     [Header("Lorax State Booleans")]

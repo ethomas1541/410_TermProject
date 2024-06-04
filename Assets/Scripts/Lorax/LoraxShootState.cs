@@ -9,6 +9,7 @@ public class LoraxShootState : LoraxState {
     public override void EnterState()
     {
         nextAttackTime = Time.time;
+        lorax.audioSource.clip = lorax.shootAudio[Random.Range(0, lorax.shootAudio.Length)];
     }
 
     public override void ExitState()
@@ -29,6 +30,7 @@ public class LoraxShootState : LoraxState {
         if (!isCoolingDown && !lorax.isKicking) {
             lorax.gfxAnimator.SetTrigger("shoot");
             lorax.target.GetComponent<HealthController>().TakeDamage(lorax.shootDamage);
+            lorax.audioSource.Play();
             lorax.timesShot++;
             StartCooldown();
         }
