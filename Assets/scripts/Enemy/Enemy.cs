@@ -126,6 +126,10 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         stateMachine.CurrentState.PhysicsUpdate();
+
+        if (healthController.currentHealth <= 0) {
+            stateMachine.ChangeState(dieState);
+        }
     }
 
     public void SetTarget(string targetTag)
