@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12230,6 +12230,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4454bbc7a1cc003499f25216ade90263, type: 3}
   m_PrefabInstance: {fileID: 1843527949}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1843997560
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3777157881573577148, guid: d266ec9a8d5e7d14094e771b6287944e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 67.15323
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777157881573577148, guid: d266ec9a8d5e7d14094e771b6287944e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -26.016617
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777157881573577148, guid: d266ec9a8d5e7d14094e771b6287944e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 47.357037
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777157881573577148, guid: d266ec9a8d5e7d14094e771b6287944e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777157881573577148, guid: d266ec9a8d5e7d14094e771b6287944e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777157881573577148, guid: d266ec9a8d5e7d14094e771b6287944e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777157881573577148, guid: d266ec9a8d5e7d14094e771b6287944e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777157881573577148, guid: d266ec9a8d5e7d14094e771b6287944e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777157881573577148, guid: d266ec9a8d5e7d14094e771b6287944e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777157881573577148, guid: d266ec9a8d5e7d14094e771b6287944e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140727648107699012, guid: d266ec9a8d5e7d14094e771b6287944e, type: 3}
+      propertyPath: m_Name
+      value: DesertMusic
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d266ec9a8d5e7d14094e771b6287944e, type: 3}
 --- !u!1001 &1851172980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14250,3 +14307,4 @@ SceneRoots:
   - {fileID: 992973409}
   - {fileID: 2111848785}
   - {fileID: 1821178244}
+  - {fileID: 1843997560}
