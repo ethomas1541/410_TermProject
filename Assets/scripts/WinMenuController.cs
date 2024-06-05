@@ -8,7 +8,7 @@ public class WinMenuController : MonoBehaviour
 {
     public void ReplayScene()
     {
-        Scene currentScene = SceneManager.GetActiveScene();s
+        Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
         Time.timeScale = 1f;
     }
