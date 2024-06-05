@@ -320,8 +320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb41a837ba6e8c46a469b73946ec930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 500
-  currentHealth: 500
+  initialHealth: 800
+  currentHealth: 800
 --- !u!114 &4834753337590110769
 MonoBehaviour:
   m_ObjectHideFlags: 0
