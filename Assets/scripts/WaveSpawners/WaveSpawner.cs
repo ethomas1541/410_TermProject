@@ -46,6 +46,9 @@ public class WaveSpawner : MonoBehaviour
     public delegate void WavesCompltes();
     public event WavesCompltes OnWavesCompleted;
 
+    // win menu
+    public GameObject WinMenu;
+
     void Start()
     {
         // Get all spawn points excluding this (only children of wave spawner can be spawn points)
@@ -58,7 +61,8 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log("Counting");
 
         // Check once per second if the enemies are alive
-        while (IsEnemyAlive()) {
+        while (IsEnemyAlive())
+        {
             yield return new WaitForSeconds(enemyCheckFrequency);
         }
 
@@ -75,7 +79,8 @@ public class WaveSpawner : MonoBehaviour
         OnWavesChange?.Invoke(currentWave);
 
         // DO SPAWNING LOGIC HERE
-        for (int i = 0; i < spawnCount; i++) {
+        for (int i = 0; i < spawnCount; i++)
+        {
             WaveEnemy waveEnemy = SelectRandomWaveEnemy();
             SpawnWaveEnemy(waveEnemy);
             yield return new WaitForSeconds(spawnRate);
@@ -89,10 +94,12 @@ public class WaveSpawner : MonoBehaviour
     }
 
     private IEnumerator Waiting()
-    {    float countdown = secondsBetweenWaves;
+    {
+        float countdown = secondsBetweenWaves;
 
         // Wait between waves then update wait time
-        while (countdown > 0) {
+        while (countdown > 0)
+        {
             yield return new WaitForSeconds(1f);
             countdown -= 1f;
             OnTimeChange?.Invoke(countdown);
@@ -101,18 +108,30 @@ public class WaveSpawner : MonoBehaviour
         UpdateSecondsBetweenWaves();
 
         // End of state
-        if (currentWave < waveCount) {
+        if (currentWave < waveCount)
+        {
             currentState = SpawnState.SPAWNING;
             StartCoroutine(Spawning());
-        } else {
+        }
+        else
+        {
             // We are done
             OnWavesCompleted?.Invoke();
             Transform spawnPoint = spawnPoints[random.Next(0, spawnPoints.Length)];
             GameObject enemy = Instantiate(finalBoss, spawnPoint.position, spawnPoint.rotation);
-            if (enemy.GetComponent<Enemy>() != null) {
+            if (enemy.GetComponent<Enemy>() != null)
+            {
                 enemy.GetComponent<Enemy>().targetTag = "Player";
             }
+            enemy.GetComponent<HealthController>().OnDeath += OnWin;
         }
+    }
+
+    // on boss fight win
+    public void OnWin()
+    {
+        Time.timeScale = 0f;
+        WinMenu.SetActive(true);
     }
 
     private void UpdateSecondsBetweenWaves()
@@ -121,7 +140,6 @@ public class WaveSpawner : MonoBehaviour
         secondsBetweenWaves = (secondsBetweenWaves + secondsDelta > 0) ? secondsBetweenWaves + secondsDelta : secondsBetweenWaves;
     }
 
-
     private WaveEnemy SelectRandomWaveEnemy()
     {
         WaveEnemy selectedEnemy = null;
@@ -129,8 +147,10 @@ public class WaveSpawner : MonoBehaviour
         float totalWeight = enemies.Sum(e => e.spawnChance);
         float randomValue = (float)random.NextDouble() * totalWeight;
 
-        foreach (WaveEnemy enemy in enemies) {
-            if (randomValue < enemy.spawnChance) {
+        foreach (WaveEnemy enemy in enemies)
+        {
+            if (randomValue < enemy.spawnChance)
+            {
                 selectedEnemy = enemy;
                 break;
             }
@@ -146,7 +166,8 @@ public class WaveSpawner : MonoBehaviour
 
     private void SpawnWaveEnemy(WaveEnemy waveEnemy)
     {
-        for (int i = 0; i < waveEnemy.count; i++) {
+        for (int i = 0; i < waveEnemy.count; i++)
+        {
             Transform spawnPoint = spawnPoints[random.Next(0, spawnPoints.Length)];
             Enemy enemy = Instantiate(waveEnemy.enemy, spawnPoint.position, spawnPoint.rotation).GetComponent<Enemy>();
             enemy.targetTag = targets[random.Next(0, targets.Length)];
