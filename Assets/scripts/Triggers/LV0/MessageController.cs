@@ -12,8 +12,8 @@ public class MessageController : MonoBehaviour
         "Left Click to swing Axe, Chop Down Trees To Harvest Wood",
         "Swing your axe To ward off the Lorax's Critters. (Careful they Bite)",
         "Head North to your camp, It is Key to your logging operation",
-        "Use the Workbench to upgrade your camp with wood",
-        "Uh Oh! The Lorax has found you. DEFEND THE CAMP!!!",
+        "Use the camp Workbench to purchase upgrades for your camp. Paul can upgrade himself at the camp wagon",
+        "Uh Oh! The Lorax has found you. DEFEND THE CAMP WITH YOUR LIFE!!!",
         " "};
     private int MSGIndex = 0;
     public TextMeshProUGUI Instruction;
@@ -22,6 +22,7 @@ public class MessageController : MonoBehaviour
     public HealthController EnemyHC;
 
     private bool MenuUnopened = true;
+    private bool firstfightdone = true;
     
 
     void Awake() {
@@ -48,7 +49,11 @@ public class MessageController : MonoBehaviour
 
     public void OnFirstFightWin()
     {
-        Instruction.text = Messages[MSGIndex];
-        MSGIndex ++;
+        if(firstfightdone)
+        {
+            Instruction.text = Messages[MSGIndex];
+            MSGIndex ++;
+            firstfightdone = false;
+        }
     }
 }
