@@ -7,10 +7,10 @@ using UnityEngine;
 using TMPro;
 
 public class CampUpgradeController : MonoBehaviour
-{   
+{
     // Events needed for the tutorial level
-     public delegate void MenuCLosed();
-     public event MenuCLosed OnExitMenu;
+    public delegate void MenuCLosed();
+    public event MenuCLosed OnExitMenu;
     //UI stuff
     public GameObject upgradeMenu;
     public GameObject UpgradePrompt;
@@ -26,7 +26,7 @@ public class CampUpgradeController : MonoBehaviour
     public int RepairCost = 0;
     public TextMeshProUGUI RepairCostTxt;
     public TextMeshProUGUI UpgradeCostTxt;
-    
+
 
     // the walls
     public GameObject Walls;
@@ -35,7 +35,11 @@ public class CampUpgradeController : MonoBehaviour
 
     // Babe the Blue Bull
     public GameObject Babe;
+    public DamageTrigger DT;
     public TextMeshProUGUI BabeCostTxT;
+    public TextMeshProUGUI BabeLabelTxT;
+    private int BabeCost = 200;
+    private int BabeLvL = 0;
 
     // poacher
     public TextMeshProUGUI PoacherCostTxT;
@@ -46,11 +50,12 @@ public class CampUpgradeController : MonoBehaviour
     public AudioClip RepSFX;
     public AudioClip HealthUpgradeSFX;
     public AudioClip BabeSFX;
+    public AudioClip Steroids;
     public AudioClip WallSFX;
     public AudioClip PoacherSFX;
     public AudioClip closeSFX;
 
-    void Start() 
+    void Start()
     {
         // set upgrade objects to inactive
         Walls.SetActive(false);
@@ -81,7 +86,7 @@ public class CampUpgradeController : MonoBehaviour
             {
                 Wallet.SpendWood(lvlCost);
                 HPcontroller.IncMaxHP(25);
-                HealthLvL ++;
+                HealthLvL++;
                 lvlCost += 25;
                 UpgradeCostTxt.text = lvlCost + "Wood";
                 aux.PlayOneShot(HealthUpgradeSFX);
@@ -95,12 +100,33 @@ public class CampUpgradeController : MonoBehaviour
 
     public void BuyOXPet()
     {
-        if (Wallet.WoodAmount >= 200 && !(Babe.activeSelf))
+        if (BabeLvL < 3)
         {
-            Wallet.SpendWood(200);
-            Babe.SetActive(true);
-            aux.PlayOneShot(BabeSFX);
-            BabeCostTxT.text = "Babe Bought";
+            if (Wallet.WoodAmount >= BabeCost)
+            {
+                if (!(Babe.activeSelf))
+                {
+                    Wallet.SpendWood(200);
+                    Babe.SetActive(true);
+                    aux.PlayOneShot(BabeSFX);
+                    BabeCost = 40;
+                    BabeCostTxT.text = "40 wood";
+                    BabeLabelTxT.text = "Give Babe Steroids";
+                }
+                else
+                {
+                    BabeCost += 20;
+                    BabeLvL++;
+                    BabeCostTxT.text = BabeCost + " Wood";
+                    DT.tagDamages[0].damage += 15;
+                    aux.PlayOneShot(Steroids);
+                }
+
+                if (BabeLvL == 3)
+                {
+                    BabeCostTxT.text = "Babe Is Fully Juiced";
+                }
+            }
         }
     }
 
@@ -130,7 +156,7 @@ public class CampUpgradeController : MonoBehaviour
 
     public void ExitMenu()
     {
-        if(upgradeMenu.activeSelf)
+        if (upgradeMenu.activeSelf)
         {
             aux.PlayOneShot(closeSFX);
             SetActiveRecursively(upgradeMenu, false);
