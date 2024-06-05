@@ -100,7 +100,7 @@ public class CampUpgradeController : MonoBehaviour
             Wallet.SpendWood(200);
             Babe.SetActive(true);
             aux.PlayOneShot(BabeSFX);
-            PoacherCostTxT.text = "Babe Bought";
+            BabeCostTxT.text = "Babe Bought";
         }
     }
 
