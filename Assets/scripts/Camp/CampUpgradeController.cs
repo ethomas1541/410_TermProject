@@ -124,7 +124,7 @@ public class CampUpgradeController : MonoBehaviour
             Wallet.SpendWood(300);
             Poacher.SetActive(true);
             aux.PlayOneShot(PoacherSFX);
-            PoacherCostTxT.text = "Poacher Hired"
+            PoacherCostTxT.text = "Poacher Hired";
         }
     }
 
