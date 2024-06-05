@@ -41,6 +41,15 @@ public class CampUpgradeController : MonoBehaviour
     public TextMeshProUGUI PoacherCostTxT;
     public GameObject Poacher;
 
+    // upgrade sounds
+    public AudioSource aux;
+    public AudioClip RepSFX;
+    public AudioClip HealthUpgradeSFX;
+    public AudioClip BabeSFX;
+    public AudioClip WallSFX;
+    public AudioClip PoacherSFX;
+    public AudioClip closeSFX;
+
     void Start() 
     {
         // set upgrade objects to inactive
@@ -59,6 +68,7 @@ public class CampUpgradeController : MonoBehaviour
                 dmgTaken = 0;
                 RepairCost = 0;
                 RepairCostTxt.text = "Camp HP Full";
+                aux.PlayOneShot(RepSFX);
             }
         }
     }
@@ -74,6 +84,7 @@ public class CampUpgradeController : MonoBehaviour
                 HealthLvL ++;
                 lvlCost += 25;
                 UpgradeCostTxt.text = lvlCost + "Wood";
+                aux.PlayOneShot(HealthUpgradeSFX);
             }
             if (HealthLvL == 5)
             {
@@ -88,6 +99,8 @@ public class CampUpgradeController : MonoBehaviour
         {
             Wallet.SpendWood(200);
             Babe.SetActive(true);
+            aux.PlayOneShot(BabeSFX);
+            PoacherCostTxT.text = "Babe Bought";
         }
     }
 
@@ -100,6 +113,7 @@ public class CampUpgradeController : MonoBehaviour
             SetActiveRecursively(Walls, true);
             WallsCost = 0;
             WallsCostTXT.text = "All Walls Built";
+            aux.PlayOneShot(WallSFX);
         }
     }
 
@@ -109,6 +123,8 @@ public class CampUpgradeController : MonoBehaviour
         {
             Wallet.SpendWood(300);
             Poacher.SetActive(true);
+            aux.PlayOneShot(PoacherSFX);
+            PoacherCostTxT.text = "Poacher Hired"
         }
     }
 
@@ -116,6 +132,7 @@ public class CampUpgradeController : MonoBehaviour
     {
         if(upgradeMenu.activeSelf)
         {
+            aux.PlayOneShot(closeSFX);
             SetActiveRecursively(upgradeMenu, false);
             OnExitMenu?.Invoke();
         }

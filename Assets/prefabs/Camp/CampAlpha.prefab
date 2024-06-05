@@ -91,6 +91,13 @@ MonoBehaviour:
   BabeCostTxT: {fileID: 3994067418774122139}
   PoacherCostTxT: {fileID: 8262861299196159316}
   Poacher: {fileID: 2223281635839843669}
+  aux: {fileID: 6846939486805859850}
+  RepSFX: {fileID: 8300000, guid: abe1be3f52ac6f942bf88121b35d58c4, type: 3}
+  HealthUpgradeSFX: {fileID: 8300000, guid: 5cb0b4d53890dfa44972b67d6224196d, type: 3}
+  BabeSFX: {fileID: 8300000, guid: 1b6849ef395d435468c42093dde33c54, type: 3}
+  WallSFX: {fileID: 8300000, guid: f0af2965dcf4d444082bfbce6a64b027, type: 3}
+  PoacherSFX: {fileID: 8300000, guid: d0da6a5908f04f643a3fd4a039f7cfa6, type: 3}
+  closeSFX: {fileID: 8300000, guid: 2943072ec4c67904fa6bdc4b9b8a7030, type: 3}
 --- !u!1 &47790595257852660
 GameObject:
   m_ObjectHideFlags: 0
